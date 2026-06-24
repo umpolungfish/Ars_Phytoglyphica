@@ -285,6 +285,16 @@ The `ars_phytoglyphica` package has **zero external dependencies** beyond Python
 
 ---
 
+## Discalimer
+
+The *Ars Phytogylphica* is provided **(1)** for education and edification and **(2)** free of strings or attachments, a loosing which proceeds bi-directionally  
+
+This is to say, the author will not be held responsible for any effects resulting from the application of the information found herein this project
+
+Don't be dumb
+
+---
+
 ## License
 
 [The Unlicense](https://unlicense.org/) — This is free and unencumbered software released into the public domain. Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
