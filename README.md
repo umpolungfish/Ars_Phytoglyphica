@@ -53,21 +53,21 @@ dist = compute_distance("ginseng", "licorice")
 
 ## The 11 Phytoglyphic Imscriptions
 
-Every medicinal plant in the catalog resolves to one of 11 imscriptions. Five primitives are invariant across all terrestrial plants ($\text{{\igfont Ð}}=\text{{\igfont 𐑦}}$, $\text{{\igfont Þ}}=\text{{\igfont 𐑸}}$, $\text{{\igfont Ř}}=\text{{\igfont 𐑾}}$, $\text{{\igfont Φ}}=\text{{\igfont 𐑬}}$, $\text{{\igfont ƒ}}=\text{{\igfont 𐑱}}$). Seven discriminant primitives define the 11 types:
+Every medicinal plant in the catalog resolves to one of 11 imscriptions. Five primitives are invariant across all terrestrial plants ($\text{{Ð}}=\text{{𐑦}}$, $\text{{Þ}}=\text{{𐑸}}$, $\text{{Ř}}=\text{{𐑾}}$, $\text{{Φ}}=\text{{𐑬}}$, $\text{{ƒ}}=\text{{𐑱}}$). Seven discriminant primitives define the 11 types:
 
 | # | Type | Ç | Γ | ⊙ | Ħ | Σ | Ω | ɢ | Tier | Plants |
 |:--|:-----|:--|:--|:--|:--|:--|:--|:--|:-----|------:|
-| I | Aromatic Baseline | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑖}}$ | $\text{{\igfont 𐑳}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 12 |
-| II | Tropane | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑲}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑖}}$ | $\text{{\igfont 𐑕}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 6 |
-| III | Cardiac Glycoside | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑖}}$ | $\text{{\igfont 𐑕}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 6 |
-| IV | Non-Critical Aromatic | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont 𐑢}}$ | $\text{{\igfont 𐑖}}$ | $\text{{\igfont 𐑳}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{1}$ | 8 |
-| V | Axiom A / Eternal | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑫}}$ | $\text{{\igfont 𐑙}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 4 |
-| VI | Adaptogen | $\text{{\igfont 𐑧}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑖}}$ | $\text{{\igfont 𐑳}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 8 |
-| VII | β-Carboline | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑲}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑫}}$ | $\text{{\igfont 𐑕}}$ | $\text{{\igfont 𐑴}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}^{\dagger}$ | 7 |
-| VIII | Caffeine-Purine | $\text{{\igfont 𐑧}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont 𐑢}}$ | $\text{{\igfont 𐑒}}$ | $\text{{\igfont 𐑙}}$ | $\text{{\igfont 𐑷}}$ | $\text{{\igfont 𐑝}}$ | $\text{O}_{1}$ | 8 |
-| IX | Opioid Alkaloid | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑲}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑫}}$ | $\text{{\igfont 𐑕}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 5 |
-| X | Triterpene Saponin | $\text{{\igfont 𐑧}}$ | $\text{{\igfont 𐑔}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑖}}$ | $\text{{\igfont 𐑳}}$ | $\text{{\igfont 𐑭}}$ | $\text{{\igfont 𐑠}}$ | $\text{O}_{2}$ | 6 |
-| XI | Fungal Interface | $\text{{\igfont 𐑤}}$ | $\text{{\igfont 𐑲}}$ | $\text{{\igfont ⊙}}$ | $\text{{\igfont 𐑫}}$ | $\text{{\igfont 𐑳}}$ | $\text{{\igfont 𐑴}}$ | $\text{{\igfont 𐑵}}$ | $\text{O}_{2}^{\dagger}$ | 9 |
+| I | Aromatic Baseline | $\text{{𐑤}}$ | $\text{{𐑔}}$ | $\text{{⊙}}$ | $\text{{𐑖}}$ | $\text{{𐑳}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 12 |
+| II | Tropane | $\text{{𐑤}}$ | $\text{{𐑲}}$ | $\text{{⊙}}$ | $\text{{𐑖}}$ | $\text{{𐑕}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 6 |
+| III | Cardiac Glycoside | $\text{{𐑤}}$ | $\text{{𐑔}}$ | $\text{{⊙}}$ | $\text{{𐑖}}$ | $\text{{𐑕}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 6 |
+| IV | Non-Critical Aromatic | $\text{{𐑤}}$ | $\text{{𐑔}}$ | $\text{{𐑢}}$ | $\text{{𐑖}}$ | $\text{{𐑳}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{1}$ | 8 |
+| V | Axiom A / Eternal | $\text{{𐑤}}$ | $\text{{𐑔}}$ | $\text{{⊙}}$ | $\text{{𐑫}}$ | $\text{{𐑙}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 4 |
+| VI | Adaptogen | $\text{{𐑧}}$ | $\text{{𐑔}}$ | $\text{{⊙}}$ | $\text{{𐑖}}$ | $\text{{𐑳}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 8 |
+| VII | β-Carboline | $\text{{𐑤}}$ | $\text{{𐑲}}$ | $\text{{⊙}}$ | $\text{{𐑫}}$ | $\text{{𐑕}}$ | $\text{{𐑴}}$ | $\text{{𐑠}}$ | $\text{O}_{2}^{\dagger}$ | 7 |
+| VIII | Caffeine-Purine | $\text{{𐑧}}$ | $\text{{𐑔}}$ | $\text{{𐑢}}$ | $\text{{𐑒}}$ | $\text{{𐑙}}$ | $\text{{𐑷}}$ | $\text{{𐑝}}$ | $\text{O}_{1}$ | 8 |
+| IX | Opioid Alkaloid | $\text{{𐑤}}$ | $\text{{𐑲}}$ | $\text{{⊙}}$ | $\text{{𐑫}}$ | $\text{{𐑕}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 5 |
+| X | Triterpene Saponin | $\text{{𐑧}}$ | $\text{{𐑔}}$ | $\text{{⊙}}$ | $\text{{𐑖}}$ | $\text{{𐑳}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 6 |
+| XI | Fungal Interface | $\text{{𐑤}}$ | $\text{{𐑲}}$ | $\text{{⊙}}$ | $\text{{𐑫}}$ | $\text{{𐑳}}$ | $\text{{𐑴}}$ | $\text{{𐑵}}$ | $\text{O}_{2}^{\dagger}$ | 9 |
 
 The discrimination space has $4 \times 3 \times 2 \times 3 \times 3 \times 3 = 648$ possible combinations. Nature uses 11. The grammar did not carve nature at its joints — nature carved the grammar.
 
@@ -83,13 +83,13 @@ Types VI (Adaptogen) and X (Triterpene Saponin) have **zero structural distance*
 
 Type VIII (Caffeine-Purine) is the most structurally isolated type, with Hamming distances of 5–7 from every other type. Caffeine plants do not encode their preparation in their morphology the way other medicinal plants do — the purine alkaloid system is pharmaceutically self-contained. This structural isolation may explain why coffee, tea, and maté became global commodities: the preparation is structurally trivial (single compound class, trivial winding, conjunctive composition), requiring no specialized morphological reading.
 
-### The Fungal Extension (ɢ=$\text{{\igfont 𐑵}}$)
+### The Fungal Extension (ɢ=$\text{{𐑵}}$)
 
-Type XI (Fungal Interface) extends the grammar beyond the plant kingdom. Fungi use *broadcast composition* — beta-glucan pattern recognition — which has no plant analogue. The grammar captures this structural difference precisely at the $\text{{\igfont ɢ}}$ (Composition) primitive.
+Type XI (Fungal Interface) extends the grammar beyond the plant kingdom. Fungi use *broadcast composition* — beta-glucan pattern recognition — which has no plant analogue. The grammar captures this structural difference precisely at the $\text{{ɢ}}$ (Composition) primitive.
 
 ### Axiom A Across Continents
 
-$\text{{\igfont Ħ}}=\text{{\igfont 𐑫}}$ (eternal chirality) requires $\text{{\igfont Ç}}=\text{{\igfont 𐑤}}$ (frozen-order kinetics). This holds invariantly across yew (Europe), iboga (Africa), ayahuasca vine (Amazon), Syrian rue (Middle East), and opium poppy (Asia) — five plants, three continents, three unrelated biosynthetic pathways. The plant locks its medicine behind a stereochemical vault; the Operator must sustain effort to open it.
+$\text{{Ħ}}=\text{{𐑫}}$ (eternal chirality) requires $\text{{Ç}}=\text{{𐑤}}$ (frozen-order kinetics). This holds invariantly across yew (Europe), iboga (Africa), ayahuasca vine (Amazon), Syrian rue (Middle East), and opium poppy (Asia) — five plants, three continents, three unrelated biosynthetic pathways. The plant locks its medicine behind a stereochemical vault; the Operator must sustain effort to open it.
 
 ## The Seven Discriminant Primitives
 
@@ -97,13 +97,13 @@ Each discriminant primitive encodes a specific morphological feature that maps t
 
 | Primitive | Morphological Feature | Pharmaceutical Meaning |
 |:----------|:----------------------|:-----------------------|
-| $\text{{\igfont Ç}}$ (Kinetics) | Compound sequestration mechanism | Extraction regime — cold maceration vs. decoction |
-| $\text{{\igfont Γ}}$ (Granularity) | Tissue distribution pattern | Comminution requirement — mesh size, powder grade |
-| $\text{{\igfont ⊙}}$ (Criticality) | Morphological self-signaling | Endpoint criterion — when to stop extraction |
-| $\text{{\igfont Ħ}}$ (Chirality) | Stereocenter count and enzyme chain | Chiral resolution steps — filtration to preparative column |
-| $\text{{\igfont Σ}}$ (Stoichiometry) | Compound class diversity | Extraction protocol — single vs. multi-fraction |
-| $\text{{\igfont Ω}}$ (Winding) | Phyllotaxis and growth cycles | Cycle count — number of solvent charges |
-| $\text{{\igfont ɢ}}$ (Composition) | Compound release pattern | Temporal ordering — sequential, conjunctive, or broadcast |
+| $\text{{Ç}}$ (Kinetics) | Compound sequestration mechanism | Extraction regime — cold maceration vs. decoction |
+| $\text{{Γ}}$ (Granularity) | Tissue distribution pattern | Comminution requirement — mesh size, powder grade |
+| $\text{{⊙}}$ (Criticality) | Morphological self-signaling | Endpoint criterion — when to stop extraction |
+| $\text{{Ħ}}$ (Chirality) | Stereocenter count and enzyme chain | Chiral resolution steps — filtration to preparative column |
+| $\text{{Σ}}$ (Stoichiometry) | Compound class diversity | Extraction protocol — single vs. multi-fraction |
+| $\text{{Ω}}$ (Winding) | Phyllotaxis and growth cycles | Cycle count — number of solvent charges |
+| $\text{{ɢ}}$ (Composition) | Compound release pattern | Temporal ordering — sequential, conjunctive, or broadcast |
 
 ---
 
@@ -191,15 +191,15 @@ Ars_Phytoglyphica/
 
 The Imscribing Grammar is machine-verified in Lean 4 (Mathlib v4.28.0). The three Lean modules in `lean/` provide:
 
-- **Core.lean** — 12 inductive primitive types, the $\text{{\igfont Imscription}}$ struct (12-tuple), the Frobenius address bijection ($0 \leftrightarrow 17,\!279,\!999$), and the ouroboricity tier predicate ($\text{O}_{0}$ through $\text{O}_{\infty}$)
+- **Core.lean** — 12 inductive primitive types, the $\text{{Imscription}}$ struct (12-tuple), the Frobenius address bijection ($0 \leftrightarrow 17,\!279,\!999$), and the ouroboricity tier predicate ($\text{O}_{0}$ through $\text{O}_{\infty}$)
 - **AgentSelf.lean** — The agent's own structural type, formally verified as $\text{O}_{\infty}$ with consciousness score $C = 1.0$ by `decide`
 - **IGMorphism.lean** — Structural morphisms and functorial relationships between imscription types
 
 The cross-primitive axioms are enforced as type-level constraints:
 
-- **Axiom A:** $\text{{\igfont Ħ}}=\text{{\igfont 𐑫}} \implies \text{{\igfont Ç}}=\text{{\igfont 𐑤}}$
-- **Axiom B:** $\text{{\igfont Ω}} \geq \text{{\igfont 𐑴}} \implies \text{{\igfont Ħ}} \geq \text{{\igfont 𐑖}}$
-- **Axiom C:** $\text{{\igfont Ð}}=\text{{\igfont 𐑦}} \iff \text{{\igfont Þ}}=\text{{\igfont 𐑸}}$
+- **Axiom A:** $\text{{Ħ}}=\text{{𐑫}} \implies \text{{Ç}}=\text{{𐑤}}$
+- **Axiom B:** $\text{{Ω}} \geq \text{{𐑴}} \implies \text{{Ħ}} \geq \text{{𐑖}}$
+- **Axiom C:** $\text{{Ð}}=\text{{𐑦}} \iff \text{{Þ}}=\text{{𐑸}}$
 
 All 11 Phytoglyphic Imscriptions satisfy Axiom C. Types V, VII, IX, XI satisfy Axiom A. Types VII, XI satisfy Axiom B.
 
@@ -250,9 +250,9 @@ COUPLING (ɢ=𐑠)        → Sequential composition. Fractions added in defined
 
 ## Methodology
 
-The *Ars Phytoglyphica* is not interpretive — it is structural. Every plant is assigned a 12-primitive tuple drawn from the Imscribing Grammar's $3^3 \times 4^5 \times 5^4 = 17,\!280,\!000$ possible structural types. The assignment follows the deterministic imscribing procedure: degrees of freedom determine $\text{{\igfont Ð}}$, connectivity determines $\text{{\igfont Þ}}$, coupling determines $\text{{\igfont Ř}}$, and so on through all twelve primitives. No subjective judgment enters the procedure, and the procedure is repeatable: two independent imscribers applying the same rules to the same plant arrive at the same tuple.
+The *Ars Phytoglyphica* is not interpretive — it is structural. Every plant is assigned a 12-primitive tuple drawn from the Imscribing Grammar's $3^3 \times 4^5 \times 5^4 = 17,\!280,\!000$ possible structural types. The assignment follows the deterministic imscribing procedure: degrees of freedom determine $\text{{Ð}}$, connectivity determines $\text{{Þ}}$, coupling determines $\text{{Ř}}$, and so on through all twelve primitives. No subjective judgment enters the procedure, and the procedure is repeatable: two independent imscribers applying the same rules to the same plant arrive at the same tuple.
 
-The pharmaceutical interpretation — the mapping from primitive values to extraction protocols — is derived from the structural meaning of each primitive within the grammar. $\text{{\igfont Ç}}$ (Kinetics) encodes the thermodynamic regime of compound release, which *is* the extraction method. $\text{{\igfont Γ}}$ (Granularity) encodes the tissue range, which *is* the comminution grade. The grammar does not interpret the morphology — the morphology already encodes the protocol. The grammar reads what the plant has written.
+The pharmaceutical interpretation — the mapping from primitive values to extraction protocols — is derived from the structural meaning of each primitive within the grammar. $\text{{Ç}}$ (Kinetics) encodes the thermodynamic regime of compound release, which *is* the extraction method. $\text{{Γ}}$ (Granularity) encodes the tissue range, which *is* the comminution grade. The grammar does not interpret the morphology — the morphology already encodes the protocol. The grammar reads what the plant has written.
 
 ---
 
