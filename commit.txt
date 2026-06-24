@@ -1,7 +1,63 @@
-Ars Phytoglyphica — Operationalization Commit
-================================================
-Date: 2026-06-24
-Author: Lando⊗⊙perator
+Novel structural predictions + ap novel command — 2026-06-24
+
+ars_phytoglyphica/navigator.py:
+  - novel_plants() — returns all catalog entries with novelty_flag=True, sorted by type
+  - lookup() — now overlays catalog entry even when plant found via type_for_plant(),
+    picking up plant-specific tuples, descriptions, and novelty fields
+
+ars_phytoglyphica/cli.py:
+  - cmd_novel (new) — `ap novel` lists all 7 structurally predicted plants with
+    one-sentence summary and full tuple
+  - cmd_plant — shows ⚑ STRUCTURAL PREDICTION block with full novelty_note + refs
+    when novelty_flag is set
+  - docstring updated with `ap novel` entry
+
+data/IG_catalog.json:
+  7 entries flagged with novelty_flag, novelty_note, novelty_refs:
+    adenostoma_fasciculatum — Type I d=0 Artemisia; zero phytochemistry despite dominant chaparral biomass
+    baccharis_pilularis     — Type I; sex-differentiated aroma = unread male/female harvest instruction
+    malosma_laurina         — Type I; inverted DEREF (glabrous leaf) encodes higher extraction threshold
+    pinus_coulteri          — Type V d=0 Taxus; taxane screen of resin never published
+    pinus_attenuata         — Type V d=0 Taxus; serotinous stability encodes compound longevity
+    chilopsis_linearis      — Type VIII; unexplained cardiac effects → purinergic ligand hypothesis
+    ceanothus_spp           — Type I; ternary DEREF (3-veined leaf) → root+leaf+bark synergy uninvestigated
+
+---
+
+Add Southern California Floristic Province Series — 2026-06-24
+
+ars_phytoglyphica/types.py:
+  Type I  (Aromatic Baseline): +17 SC plants
+    artemisia_californica, artemisia_ludoviciana, artemisia_dracunculus,
+    salvia_mellifera, salvia_apiana, salvia_clevelandii, salvia_leucophylla,
+    eriogonum_fasciculatum, malosma_laurina, rhus_integrifolia, rhus_ovata,
+    adenostoma_fasciculatum, ceanothus_spp, eriodictyon_californicum,
+    baccharis_pilularis, baccharis_salicifolia, foeniculum_vulgare
+  Type II (Tropane):           +1  datura_wrightii (spiny-capsule populations, reclassified)
+  Type IV (Non-Critical):      +7  umbellularia_californica, heteromeles_arbutifolia,
+                                   toxicodendron_diversilobum, sambucus_cerulea, rosa_californica,
+                                   urtica_dioica, ephedra_californica
+  Type V  (Axiom A / Eternal): +3  pinus_coulteri, pinus_attenuata, taxus_brevifolia
+  Type VI (Adaptogen):         +1  oplopanax_horridus
+  Type VII (β-Carboline):      +1  passiflora_subpeltata
+  Type VIII (Caffeine-Purine): +2  ilex_vomitoria, chilopsis_linearis
+  Total: 79 → 111 representatives
+
+data/IG_catalog.json:
+  +32 new plant entries (3586 → 3618 total)
+  Structural deviations from canonical type tuples:
+    toxicodendron_diversilobum: Σ=𐑙  (singular urushiol congener class)
+    heteromeles_arbutifolia:    Σ=𐑕  (few cyanogenic classes)
+    rosa_californica:           Σ=𐑕  (few compound classes)
+    urtica_dioica:              Ω=𐑴  (binary winding, opposite phyllotaxis)
+    ephedra_californica:        Σ=𐑙, Ω=𐑷 (singular class, trivial/jointed winding)
+  All others carry canonical type base tuple.
+
+Source: Ars_Phytoglyphica/SOUTHERN_CALIFORNIA_SERIES.md
+
+---
+
+Ars Phytoglyphica — Operationalization Commit — 2026-06-24
 
 Package: ars_phytoglyphica v1.0.0
 CLI:     ap (ars-phytoglyphica)

@@ -19,12 +19,25 @@ TYPES: list[PlantType] = [
     PlantType(1, 'Aromatic Baseline', 'O₂',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑔', '𐑠', '⊙', '𐑖', '𐑳', '𐑭'),
         'Frozen-order kinetics from volatile terpenoids. Mesoscale granularity. Self-modeling criticality.',
-        ['artemisia_absinthium', 'artemisia_vulgaris', 'salvia_officinalis', 'rosmarinus_officinalis', 'thymus_vulgaris', 'mentha_piperita', 'lavandula_angustifolia', 'melissa_officinalis', 'hyssopus_officinalis', 'origanum_vulgare', 'achillea_millefolium', 'tanacetum_parthenium']
+        [
+            'artemisia_absinthium', 'artemisia_vulgaris', 'salvia_officinalis', 'rosmarinus_officinalis',
+            'thymus_vulgaris', 'mentha_piperita', 'lavandula_angustifolia', 'melissa_officinalis',
+            'hyssopus_officinalis', 'origanum_vulgare', 'achillea_millefolium', 'tanacetum_parthenium',
+            # Southern California Series
+            'artemisia_californica', 'artemisia_ludoviciana', 'artemisia_dracunculus',
+            'salvia_mellifera', 'salvia_apiana', 'salvia_clevelandii', 'salvia_leucophylla',
+            'eriogonum_fasciculatum', 'malosma_laurina', 'rhus_integrifolia', 'rhus_ovata',
+            'adenostoma_fasciculatum', 'ceanothus_spp', 'eriodictyon_californicum',
+            'baccharis_pilularis', 'baccharis_salicifolia', 'foeniculum_vulgare',
+        ]
     ),
     PlantType(2, 'Tropane', 'O₂',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑲', '𐑠', '⊙', '𐑖', '𐑕', '𐑭'),
         'Fine granularity from tropane alkaloid distribution. Few compound classes.',
-        ['atropa_belladonna', 'hyoscyamus_niger', 'datura_stramonium', 'mandragora_officinarum', 'brugmansia_suaveolens', 'duboisia_myoporoides']
+        ['atropa_belladonna', 'hyoscyamus_niger', 'datura_stramonium', 'mandragora_officinarum',
+         'brugmansia_suaveolens', 'duboisia_myoporoides',
+         'datura_wrightii',  # Southern California Series (spiny-capsule populations)
+        ]
     ),
     PlantType(3, 'Cardiac Glycoside', 'O₂',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑔', '𐑠', '⊙', '𐑖', '𐑕', '𐑭'),
@@ -34,27 +47,44 @@ TYPES: list[PlantType] = [
     PlantType(4, 'Non-Critical Aromatic', 'O₁',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑔', '𐑠', '𐑢', '𐑖', '𐑳', '𐑭'),
         'Sub-critical endpoint. Many compound classes. Gentle extraction.',
-        ['matricaria_chamomilla', 'calendula_officinalis', 'tilia_cordata', 'sambucus_nigra_flos', 'viola_tricolor', 'althaea_officinalis', 'malva_sylvestris', 'plantago_lanceolata']
+        [
+            'matricaria_chamomilla', 'calendula_officinalis', 'tilia_cordata', 'sambucus_nigra_flos',
+            'viola_tricolor', 'althaea_officinalis', 'malva_sylvestris', 'plantago_lanceolata',
+            # Southern California Series (some with non-canonical Σ or Ω — see catalog)
+            'umbellularia_californica', 'heteromeles_arbutifolia', 'toxicodendron_diversilobum',
+            'sambucus_cerulea', 'rosa_californica', 'urtica_dioica', 'ephedra_californica',
+        ]
     ),
     PlantType(5, 'Axiom A / Eternal', 'O₂',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑔', '𐑠', '⊙', '𐑫', '𐑙', '𐑭'),
         'Eternal chirality. Single compound class.',
-        ['taxus_baccata', 'catharanthus_roseus', 'podophyllum_peltatum', 'camptotheca_acuminata']
+        ['taxus_baccata', 'catharanthus_roseus', 'podophyllum_peltatum', 'camptotheca_acuminata',
+         'pinus_coulteri', 'pinus_attenuata', 'taxus_brevifolia',  # Southern California Series
+        ]
     ),
     PlantType(6, 'Adaptogen', 'O₂',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑧', '𐑔', '𐑠', '⊙', '𐑖', '𐑳', '𐑭'),
         'Slow kinetics from multi-system action. Asian pharmacopoeia defining type.',
-        ['panax_ginseng', 'panax_quinquefolius', 'withania_somnifera', 'rhodiola_rosea', 'schisandra_chinensis', 'eleutherococcus_senticosus', 'ocimum_tenuiflorum', 'astragalus_membranaceus']
+        ['panax_ginseng', 'panax_quinquefolius', 'withania_somnifera', 'rhodiola_rosea',
+         'schisandra_chinensis', 'eleutherococcus_senticosus', 'ocimum_tenuiflorum', 'astragalus_membranaceus',
+         'oplopanax_horridus',  # Southern California Series (montane, boundary VI)
+        ]
     ),
     PlantType(7, 'β-Carboline', 'O₂†',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑲', '𐑠', '⊙', '𐑫', '𐑕', '𐑴'),
         'Universal granularity. Eternal chirality. Binary winding for MAO inhibition gate.',
-        ['banisteriopsis_caapi', 'peganum_harmala', 'tabernanthe_iboga', 'pausinystalia_yohimbe', 'voacanga_africana', 'psychotria_viridis', 'diplopterys_cabrerana']
+        ['banisteriopsis_caapi', 'peganum_harmala', 'tabernanthe_iboga', 'pausinystalia_yohimbe',
+         'voacanga_africana', 'psychotria_viridis', 'diplopterys_cabrerana',
+         'passiflora_subpeltata',  # Southern California Series (boundary VII, low-alkaloid)
+        ]
     ),
     PlantType(8, 'Caffeine-Purine', 'O₁',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑧', '𐑔', '𐑝', '𐑢', '𐑒', '𐑙', '𐑷'),
         'Slow kinetics from purine release. Single-step chirality. Single class. Trivial winding.',
-        ['coffea_arabica', 'coffea_canephora', 'camellia_sinensis', 'ilex_guayusa', 'ilex_paraguariensis', 'cola_acuminata', 'paullinia_cupana', 'theobroma_cacao']
+        ['coffea_arabica', 'coffea_canephora', 'camellia_sinensis', 'ilex_guayusa', 'ilex_paraguariensis',
+         'cola_acuminata', 'paullinia_cupana', 'theobroma_cacao',
+         'ilex_vomitoria', 'chilopsis_linearis',  # Southern California Series
+        ]
     ),
     PlantType(9, 'Opioid Alkaloid', 'O₂',
         ('𐑦', '𐑸', '𐑾', '𐑬', '𐑱', '𐑤', '𐑲', '𐑠', '⊙', '𐑫', '𐑕', '𐑭'),

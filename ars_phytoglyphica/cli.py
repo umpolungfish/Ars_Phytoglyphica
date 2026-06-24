@@ -8,6 +8,7 @@ Ars Phytoglyphica — Unified CLI.
   ap morphology <name>         Full morphological→pharmaceutical elaboration
   ap distance   <a> <b>        Structural distance between two plants/types
   ap list      [type_num]      List plants, optionally filtered by type
+  ap novel                     List plants with structural predictions (uninvestigated pharmacology)
 
 Run `ap <command> --help` for per-command options.
 """
@@ -17,7 +18,7 @@ import argparse
 import sys
 
 from .types import TYPES, PRIM_KEYS, type_for_plant, type_by_num, type_by_name, all_plants
-from .navigator import lookup, list_plants, type_distances, compute_distance
+from .navigator import lookup, list_plants, type_distances, compute_distance, novel_plants
 from .elaborator import elaborate_morphology, format_morphology_report
 
 
@@ -85,6 +86,26 @@ def cmd_plant(args: argparse.Namespace) -> int:
         if 'closest_type_distance' in info:
             print(f'  d(type) : {info["closest_type_distance"]} (primitive mismatches)')
     print('─' * width)
+    if info.get('novelty_flag'):
+        print(f'  ⚑ STRUCTURAL PREDICTION — uninvestigated pharmacology')
+        note = info.get('novelty_note', '')
+        # Wrap at ~68 chars
+        words = note.split()
+        line = '    '
+        for w in words:
+            if len(line) + len(w) + 1 > 70:
+                print(line)
+                line = '    ' + w + ' '
+            else:
+                line += w + ' '
+        if line.strip():
+            print(line)
+        refs = info.get('novelty_refs', [])
+        if refs:
+            print(f'  ─ refs:')
+            for r in refs:
+                print(f'    · {r}')
+        print('─' * width)
     if info.get('representatives'):
         print(f'  Sibling plants (same type):')
         for r in info['representatives']:
@@ -189,6 +210,40 @@ def cmd_distance(args: argparse.Namespace) -> int:
     return 0
 
 
+# ─── ap novel ──────────────────────────────────────────────────────
+
+def cmd_novel(_args: argparse.Namespace) -> int:
+    entries = novel_plants()
+    width = 72
+    print('═' * width)
+    print(f'  STRUCTURAL PREDICTIONS — Pharmacologically Uninvestigated Plants')
+    print(f'  Grammar assigns these to known-medicinal types; chemistry has not followed.')
+    print('─' * width)
+    for e in entries:
+        name = e['name']
+        type_label = f'Type {_roman(e["type_num"])} ({e["type_name"]})'
+        print(f'  ⚑  {name}')
+        print(f'     {type_label}  ·  Tuple {_render_tuple(e["tuple"])}')
+        note = e.get('novelty_note', '')
+        # First sentence only for the list view
+        first = note.split('.')[0].strip() + '.'
+        words = first.split()
+        line = '     '
+        for w in words:
+            if len(line) + len(w) + 1 > 70:
+                print(line)
+                line = '     ' + w + ' '
+            else:
+                line += w + ' '
+        if line.strip():
+            print(line)
+        print()
+    print('─' * width)
+    print(f'  {len(entries)} plants flagged.  Run `ap plant <name>` for full prediction.')
+    print('═' * width)
+    return 0
+
+
 # ─── ap list ───────────────────────────────────────────────────────
 
 def cmd_list(args: argparse.Namespace) -> int:
@@ -236,6 +291,8 @@ def main() -> None:
     p_list = sub.add_parser('list', help='List plants, optionally filtered by type')
     p_list.add_argument('type', nargs='?', help='Type number (1-11)')
 
+    sub.add_parser('novel', help='List plants with structural predictions (uninvestigated pharmacology)')
+
     args = parser.parse_args()
 
     dispatch = {
@@ -246,6 +303,7 @@ def main() -> None:
         'morphology': cmd_morphology,
         'distance':   cmd_distance,
         'list':       cmd_list,
+        'novel':      cmd_novel,
     }
 
     if args.command not in dispatch:

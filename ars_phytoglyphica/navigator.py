@@ -96,7 +96,7 @@ def lookup(plant_name: str) -> dict:
                 }
         raise KeyError(f'Plant not found: {plant_name!r}')
 
-    return {
+    result = {
         'name': plant_name,
         'type_num': ptype.num,
         'type_name': ptype.name,
@@ -107,6 +107,28 @@ def lookup(plant_name: str) -> dict:
         'in_catalog': False,
         'catalog_name': None,
     }
+    # Overlay catalog entry if it exists (picks up novelty flags, plant-specific tuples, etc.)
+    _load_catalog()
+    name_lower = plant_name.lower()
+    cat_entry = _catalog_entries.get(name_lower) or _catalog_entries.get(plant_name)
+    if cat_entry is None:
+        for cname, cval in _catalog_entries.items():
+            if cname.lower() == name_lower:
+                cat_entry = cval
+                break
+    if cat_entry:
+        result['in_catalog'] = True
+        result['catalog_name'] = cat_entry.get('name', plant_name)
+        if cat_entry.get('description'):
+            result['description'] = cat_entry['description']
+        # Plant-specific tuple (may differ from canonical type tuple)
+        plant_tup = _tuple_from_entry(cat_entry)
+        if any(v != '—' for v in plant_tup):
+            result['tuple'] = plant_tup
+        for key in ('novelty_flag', 'novelty_note', 'novelty_refs'):
+            if key in cat_entry:
+                result[key] = cat_entry[key]
+    return result
 
 
 def list_plants(type_num: Optional[int] = None) -> list[str]:
@@ -156,6 +178,32 @@ def _resolve_name(name: str):
     # Try plant lookup
     info = lookup(name)
     return info['tuple']
+def novel_plants() -> list[dict]:
+    """Return catalog entries flagged as structural predictions (novelty_flag=True)."""
+    _load_catalog()
+    results = []
+    for name, entry in _catalog_entries.items():
+        if entry.get('novelty_flag'):
+            tup = _tuple_from_entry(entry)
+            best_type = None
+            best_dist = 999
+            for t in TYPES:
+                d = _hamming_distance(tup, list(t.tuple12))
+                if d < best_dist:
+                    best_dist = d
+                    best_type = t
+            results.append({
+                'name': name,
+                'type_num': best_type.num if best_type else None,
+                'type_name': best_type.name if best_type else 'Unknown',
+                'tier': best_type.tier if best_type else '?',
+                'tuple': tup,
+                'novelty_note': entry.get('novelty_note', ''),
+                'novelty_refs': entry.get('novelty_refs', []),
+            })
+    return sorted(results, key=lambda x: (x['type_num'] or 99, x['name']))
+
+
 def compute_distance(name_a: str, name_b: str) -> dict:
     """Compute the structural distance between two plants or types."""
     tup_a = _resolve_name(name_a)
