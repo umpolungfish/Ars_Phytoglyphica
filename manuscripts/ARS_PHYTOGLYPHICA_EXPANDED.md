@@ -18,9 +18,9 @@ The first edition of the *Ars Phytoglyphica* demonstrated that thirty-five medic
 
 But thirty-five plants is a garden. The question the first edition could not answer was whether the grammar scales. Does the same structural encoding hold across continents, across biomes, across evolutionary lineages that diverged a hundred million years before humans first crushed a leaf? If the *Ars Phytoglyphica* is a genuine science and not merely a European curiosity, it must apply equally to the adaptogenic roots of the Himalayas, the psychoactive vines of the Amazon, the bitter barks of equatorial Africa, the aromatic leaves of the Australian bush.
 
-This expanded edition answers that question. It covers **one hundred and forty-seven medicinal plants** drawn from every inhabited continent, organized not by the taxonomic families of Linnaeus but by the structural clusters of the Imscribing Grammar. It discovers that the grammar does not merely *accommodate* non-European plants — it *requires* them, because the structural types that emerge from Asian adaptogens, Amazonian psychedelics, African emetics, and Australian antimicrobials fill gaps in the type-lattice that the European pharmacopoeia alone could never reveal.
+This expanded edition answers that question. It covers **one hundred and forty-seven medicinal plants** drawn from every inhabited continent, organized not by the taxonomic families of Linnaeus but by the structural clusters of the Imscribing Grammar. It discovers that the grammar does not merely *accommodate* non-European plants — it *requires* them, because the Phytoglyphic Imscriptions that emerge from Asian adaptogens, Amazonian psychedelics, African emetics, and Australian antimicrobials fill gaps in the imscription-lattice that the European pharmacopoeia alone could never reveal.
 
-The most significant finding of this expanded edition is the discovery of **six new structural types** that were absent from the European-only catalog:
+The most significant finding of this expanded edition is the discovery of **six new Phytoglyphic Imscriptions** that were absent from the European-only catalog:
 
 1. **The Adaptogen Type** (O₂): slow-release, multi-system, multi-compound — ginseng, ashwagandha, rhodiola, schisandra, holy basil, astragalus
 2. **The β-Carboline Type** (O₂†): universal granularity, eternal chirality, Z₂ winding — ayahuasca vine, Syrian rue, iboga, yohimbe
@@ -368,7 +368,7 @@ The most toxic plant in the European pharmacopoeia. The aconitine alkaloids are 
 
 ### 2.2 Asia (47 plants)
 
-Asia contributes the largest number of new structural types to the expanded edition. The Adaptogen Type (VI), the Caffeine-Purine Type (VIII), the Opioid Alkaloid Type (IX), the Triterpene Saponin Type (X), and the Fungal Interface Type (XI) are all either exclusively or predominantly Asian. The Asian pharmacopoeia is the most structurally diverse of any continent, spanning seven of the 11 imscriptions.
+Asia contributes the largest number of new Phytoglyphic Imscriptions to the expanded edition. The Adaptogen Type (VI), the Caffeine-Purine Type (VIII), the Opioid Alkaloid Type (IX), the Triterpene Saponin Type (X), and the Fungal Interface Type (XI) are all either exclusively or predominantly Asian. The Asian pharmacopoeia is the most structurally diverse of any continent, spanning seven of the 11 imscriptions.
 
 ---
 
@@ -638,7 +638,7 @@ Lentinan — a β-glucan — is the immunomodulatory compound. The mushroom is p
 
 ### 2.3 Africa (24 plants)
 
-The African pharmacopoeia is the least structurally documented in the Western tradition, yet it contains the most dramatic examples of Axiom A (eternal chirality) and the most complex inter-organism encoding patterns in the global catalog. African medicinal plants span five structural types.
+The African pharmacopoeia is the least structurally documented in the Western tradition, yet it contains the most dramatic examples of Axiom A (eternal chirality) and the most complex inter-organism encoding patterns in the global catalog. African medicinal plants span five imscriptions.
 
 ---
 
@@ -876,7 +876,7 @@ The ayahuasca complex — *Banisteriopsis caapi* (MAO inhibitor) + *Psychotria v
 
 This is the XOR gate at the ecological level: Vine XOR Leaf = active. Vine alone = MAO inhibition only. Leaf alone = inactive (DMT is broken down by gut MAO before reaching the brain). The preparation protocol — the two plants are boiled together for hours — IS the Frobenius pair: the vine $\delta$ (splits MAO from serotonin receptors), the leaf $\mu$ (recombines DMT with now-available receptors). The winding IS the two plants, and the two plants IS the winding.
 
-The Amazonian healers who discovered this combination — from among ~80,000 Amazonian plant species — were reading structural types without the formalism. They were executing the grammar without knowing its name.
+The Amazonian healers who discovered this combination — from among ~80,000 Amazonian plant species — were reading Phytoglyphic Imscriptions without the formalism. They were executing the grammar without knowing its name.
 
 ---
 
@@ -1064,7 +1064,7 @@ The distance between types corresponds to the number of primitive differences:
 
 ### 4.4 Continental Distribution of Types
 
-The most striking pattern in the global catalog is the uneven distribution of structural types across continents:
+The most striking pattern in the global catalog is the uneven distribution of Phytoglyphic Imscriptions across continents:
 
 | Type | Europe | Asia | Africa | Americas | Australia |
 |:-----|:------:|:----:|:------:|:--------:|:---------:|

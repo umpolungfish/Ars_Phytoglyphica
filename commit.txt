@@ -19,7 +19,7 @@ Structure:
   programs/                        — generate_urpflanze_svgs.py
 
 Key findings:
-  - 11 structural types spanning O₁ through O₂†
+  - 11 Phytoglyphic Imscriptions spanning O₁ through O₂†
   - d=0 identity: Adaptogen (VI) ≡ Triterpene Saponin (X) — convergent evolution
   - Caffeine-Purine (VIII) is maximally isolated (d=5-7 from all others)
   - 79 representative plants, organized by type

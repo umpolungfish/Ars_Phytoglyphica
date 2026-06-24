@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Ars Phytoglyphica — Illustration Generator
-Generates SVG illustrations for all 11 structural types, continental distribution,
+Generates SVG illustrations for all 11 Phytoglyphic Imscriptions, continental distribution,
 type lattice, and representative botanical diagrams.
 Author: Lando⊗⊙perator
 """
