@@ -1,0 +1,14 @@
+[project]
+name = "ars-phytoglyphica"
+version = "1.0.0"
+description = "Ars Phytoglyphica — Global treatise on morphological encoding of pharmaceutical knowledge, operationalized as a type-lattice navigator"
+requires-python = ">=3.11"
+license = {text = "Unlicense"}
+dependencies = []
+
+[project.scripts]
+ap = "ars_phytoglyphica.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

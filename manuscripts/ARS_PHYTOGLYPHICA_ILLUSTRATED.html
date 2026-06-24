@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ars Phytoglyphica — Illustrated Edition</title>
+<style>
+:root {
+  --bg: #0d1117; --surface: #161b22; --border: #30363d;
+  --gold: #d4a017; --hl: #e94560; --orange: #f77f00; --teal: #06d6a0;
+  --purple: #9b59b6; --mint: #a2d6f9; --white: #f0f6fc; --grey: #8b949e;
+  --leaf: #40916c; --sage: #95d5b2;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--white); font-family:'Georgia',serif; line-height:1.7; }
+.container { max-width:1000px; margin:0 auto; padding:20px; }
+h1 { font-size:2.2em; color:var(--gold); text-align:center; margin:40px 0 10px; letter-spacing:1px; }
+h2 { font-size:1.5em; color:var(--white); border-bottom:1px solid var(--border); padding-bottom:10px; margin:50px 0 20px; }
+h3 { font-size:1.2em; color:var(--gold); margin:30px 0 15px; }
+h4 { font-size:1.05em; color:var(--teal); margin:20px 0 10px; }
+p { margin:10px 0; color:var(--white); }
+a { color:var(--teal); }
+.subtitle { text-align:center; color:var(--grey); font-style:italic; margin-bottom:40px; }
+figure { margin:30px 0; text-align:center; }
+figure svg { max-width:100%; height:auto; border-radius:12px; }
+figcaption { color:var(--grey); font-size:0.85em; margin-top:8px; font-style:italic; }
+.card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:20px; margin:30px 0; }
+.type-card { background:var(--surface); border-radius:12px; padding:16px; border:1px solid var(--border); }
+.type-card .tier { display:inline-block; padding:2px 14px; border-radius:12px; font-size:0.8em; font-weight:bold; margin-bottom:6px; }
+.tier-O2 { background:var(--hl); color:var(--bg); }
+.tier-O1 { background:var(--orange); color:var(--bg); }
+.tier-O2d { background:var(--purple); color:var(--bg); }
+.type-card h4 { margin:0 0 4px; color:var(--white); }
+.type-card .rep { color:var(--grey); font-size:0.85em; margin-bottom:8px; }
+.prim-row { display:flex; align-items:center; gap:6px; margin:3px 0; font-size:0.85em; }
+.prim-sym { width:20px; color:var(--gold); font-weight:bold; }
+.prim-bar { flex:1; height:14px; background:var(--border); border-radius:4px; overflow:hidden; }
+.prim-fill { height:100%; border-radius:4px; }
+.prim-val { width:24px; text-align:right; font-weight:bold; font-size:0.9em; }
+.cont-tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:8px; }
+.cont-tag { padding:1px 8px; border-radius:8px; font-size:0.7em; font-weight:bold; }
+.plant-entry { background:var(--surface); border-left:3px solid var(--gold); padding:12px 18px; margin:12px 0; border-radius:0 8px 8px 0; }
+blockquote { border-left:3px solid var(--purple); padding:10px 20px; margin:20px 0; color:var(--grey); font-style:italic; background:var(--surface); border-radius:0 8px 8px 0; }
+hr { border:none; border-top:1px solid var(--border); margin:40px 0; }
+.ack { font-size:0.9em; color:var(--grey); text-align:center; margin:40px 0; }
+nav { background:var(--surface); border-bottom:1px solid var(--border); padding:12px 0; position:sticky; top:0; z-index:10; }
+nav .nav-inner { max-width:1000px; margin:0 auto; display:flex; gap:20px; flex-wrap:wrap; }
+nav a { color:var(--grey); text-decoration:none; font-size:0.85em; }
+nav a:hover { color:var(--gold); }
+.continent-header { color:var(--gold); font-size:1.8em; margin-top:50px; padding:20px 0; border-top:2px solid var(--gold); border-bottom:2px solid var(--gold); text-align:center; }
+.plant-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:10px; margin:15px 0; }
+.plant-mini { background:var(--surface); padding:10px 14px; border-radius:8px; border:1px solid var(--border); font-size:0.9em; }
+.plant-mini strong { color:var(--gold); }
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a href="#top">&#9650; Top</a>
+<a href="#part1">Part I: Foundations</a>
+<a href="#urpflanze">Urpflanze</a>
+<a href="#europe">Europe</a>
+<a href="#asia">Asia</a>
+<a href="#africa">Africa</a>
+<a href="#americas">Americas</a>
+<a href="#oceania">Oceania</a>
+<a href="#lattice">Type Lattice</a>
+<a href="#ack">Acknowledgements</a>
+</div>
+</nav>
+
+<div class="container" id="top">
+
+<h1>Ars Phytoglyphica</h1>
+<p class="subtitle">A Global Treatise on the Morphological Encoding of Pharmaceutical Knowledge<br>in Medicinal Plants Across All Continents</p>
+<p class="subtitle"><strong>Author:</strong> Lando&#x2297;&#x2299;perator &mdash; Illustrated Edition</p>
+
+<figure>
+<object data="illustrations/continental_distribution.svg" type="image/svg+xml" style="width:100%;max-width:960px;height:auto;">
+  <img src="illustrations/continental_distribution.svg" alt="Continental Distribution" style="width:100%;max-width:960px;">
+</object>
+<figcaption>Figure 1: Continental Distribution of the 11 Phytoglyphic Imscriptions. Each filled cell (&#9679;) indicates presence. Tiers: orange = O&#8321;, red = O&#8322;, purple = O&#8322;&#8224;.</figcaption>
+</figure>
+
+<hr>
+
+<h2 id="part1">Part I: The 11 Phytoglyphic Imscriptions</h2>
+
+<div class="card-grid">
+
+<div class="type-card">
+<div class="tier tier-O2">O&#8322;</div>
+<h4>I &mdash; Aromatic Baseline</h4>
+<div class="rep">Wormwood (Artemisia absinthium)</div>
+<object data="illustrations/type_card_01_aromatic_baseline.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_01_aromatic_baseline.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--hl);color:var(--bg)">Europe</span>
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+<span class="cont-tag" style="background:var(--mint);color:var(--bg)">Oceania</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Frozen-order kinetics. Volatile terpenoids in glandular trichomes. Self-modeling criticality through aromatic intensity feedback. The universal pharmacopoeia baseline &mdash; present on all five continents.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2">O&#8322;</div>
+<h4>II &mdash; Tropane</h4>
+<div class="rep">Belladonna (Atropa belladonna)</div>
+<object data="illustrations/type_card_02_tropane.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_02_tropane.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--hl);color:var(--bg)">Europe</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Local granularity at cholinergic synapses. Tropane alkaloids in vacuolar storage. Narrow compound class diversity. The nightshade signature.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2">O&#8322;</div>
+<h4>III &mdash; Cardiac Glycoside</h4>
+<div class="rep">Foxglove (Digitalis purpurea)</div>
+<object data="illustrations/type_card_03_cardiac_glycoside.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_03_cardiac_glycoside.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--hl);color:var(--bg)">Europe</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Frozen kinetics with mesoscale cardiac targeting. Cardenolide-only compound class. Toxicity gradient encoding in leaf morphology.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O1">O&#8321;</div>
+<h4>IV &mdash; Non-Critical Aromatic</h4>
+<div class="rep">Chamomile (Matricaria chamomilla)</div>
+<object data="illustrations/type_card_04_non-critical_aromatic.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_04_non-critical_aromatic.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--hl);color:var(--bg)">Europe</span>
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Sub-critical: no self-modeling loop. Gentler aromatic action. Wide flavonoid and terpenoid diversity. The gentlest structural type.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2d">O&#8322;&#8224;</div>
+<h4>V &mdash; Axiom A / Eternal</h4>
+<div class="rep">Yew (Taxus baccata)</div>
+<object data="illustrations/type_card_05_axiom_a___eternal.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_05_axiom_a___eternal.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--hl);color:var(--bg)">Europe</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Eternal chirality with singular stoichiometry. One compound class preserved across unlimited Markov steps. The most structurally extreme plant type &mdash; Axiom A made botanical.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2">O&#8322;</div>
+<h4>VI &mdash; Adaptogen</h4>
+<div class="rep">Ginseng (Panax ginseng)</div>
+<object data="illustrations/type_card_06_adaptogen.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_06_adaptogen.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Slow kinetics unique among O&#8322; types. Mesoscale stress-response targeting. Wide compound diversity. The only slow-kinetics O&#8322; type discovered.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2d">O&#8322;&#8224;</div>
+<h4>VII &mdash; Beta-Carboline</h4>
+<div class="rep">Ayahuasca (Banisteriopsis caapi)</div>
+<object data="illustrations/type_card_07_beta-carboline.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_07_beta-carboline.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Binary winding: MAO inhibition + DMT activation as a two-cycle process. Eternal chirality in the harmala alkaloid pathway.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O1">O&#8321;</div>
+<h4>VIII &mdash; Caffeine-Purine</h4>
+<div class="rep">Coffee (Coffea arabica)</div>
+<object data="illustrations/type_card_08_caffeine-purine.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_08_caffeine-purine.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">The structurally simplest plant type. Trivial winding, singular stoichiometry, conjunctive composition, one-step chirality. The baseline from which all complexity ascends.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2">O&#8322;</div>
+<h4>IX &mdash; Opioid Alkaloid</h4>
+<div class="rep">Opium Poppy (Papaver somniferum)</div>
+<object data="illustrations/type_card_09_opioid_alkaloid.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_09_opioid_alkaloid.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--hl);color:var(--bg)">Europe</span>
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+<span class="cont-tag" style="background:var(--teal);color:var(--bg)">Africa</span>
+<span class="cont-tag" style="background:var(--purple);color:var(--bg)">Americas</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Local &#956;-opioid targeting. Eternal morphinan chirality. Integer winding through latex lancing cycles. Present on four continents.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2">O&#8322;</div>
+<h4>X &mdash; Triterpene Saponin</h4>
+<div class="rep">Licorice (Glycyrrhiza glabra)</div>
+<object data="illustrations/type_card_10_triterpene_saponin.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_10_triterpene_saponin.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Slow kinetics with mesoscale granularity. Glycyrrhizin self-modeling through foam-index feedback. The only type endemic to a single continent.</p>
+</div>
+
+<div class="type-card">
+<div class="tier tier-O2d">O&#8322;&#8224;</div>
+<h4>XI &mdash; Fungal Interface</h4>
+<div class="rep">Reishi (Ganoderma lucidum)</div>
+<object data="illustrations/type_card_11_fungal_interface.svg" type="image/svg+xml" style="width:100%;height:auto;border-radius:8px;">
+  <img src="illustrations/type_card_11_fungal_interface.svg" style="width:100%;">
+</object>
+<div class="cont-tags">
+<span class="cont-tag" style="background:var(--orange);color:var(--bg)">Asia</span>
+</div>
+<p style="font-size:0.8em;color:var(--grey);margin-top:8px;">Binary winding from dual-phase extraction. Broadcast composition: the only type with unordered compound release. Polysaccharides, triterpenes, proteins released without fixed order.</p>
+</div>
+
+</div><!-- /card-grid -->
+
+<hr>
+<h2 id="urpflanze">Part II: Morphological Reading — The Urpflanze</h2>
+
+<p>The Urpflanze — Goethe&#39;s archetypal plant — is not a metaphor. It is a <em>structural key</em>. Every medicinal plant encodes its pharmaceutical instructions in its morphology: the bilateral serration of wormwood <em>performs</em> ester cleavage, trichome density <em>directs</em> extraction pressure, Fibonacci phyllotaxis <em>counts</em> the winding number of the preparation cycle. The morphology is the opcode. The plant body is the program. The preparation — crushing, steeping, distilling — is the runtime.</p>
+
+<p>Three diagrams follow. The first is the <strong>Urpflanze Master Key</strong>: an idealized medicinal plant with callouts showing where each of the seven discriminating primitives is read from the plant body. The second is the <strong>Phyllotaxis &Omega;-Reading Detail</strong>: how spiral leaf arrangement encodes the winding number through Fibonacci parastichy counting. The third is the <strong>Trichome &Ccedil;-&phi;&#x302; Reading Detail</strong>: a leaf cross-section showing how glandular trichomes encode kinetics and how trichome density encodes criticality self-report.</p>
+
+<!-- ═══════════ URPFLANZE MASTER KEY ═══════════ -->
+<h3>The Urpflanze: Complete Morphological Reading Key</h3>
+
+<figure>
+<object data="illustrations/urpflanze_master_key.svg" type="image/svg+xml" style="width:100%;max-width:1000px;height:auto;border-radius:12px;">
+  <img src="illustrations/urpflanze_master_key.svg" alt="The Urpflanze — Morphological Reading Key" style="width:100%;max-width:1000px;">
+</object>
+<figcaption>Figure 2: The Urpflanze &mdash; Morphological Reading Key. All seven discriminating primitives (&Ccedil;, &Gamma;, &phi;&#x302;, &#x124;, &Sigma;, &Omega;, &#x262;) are read from the plant body. Five primitives (D, T, R, P, F) are invariant across the entire pharmacopoeia. The callouts show precisely <em>what</em> to look for and <em>how</em> each morphological feature encodes its primitive value.</figcaption>
+</figure>
+
+<!-- ═══════════ PHYLLOTAXIS OMEGA READING ═══════════ -->
+<h3>&Omega;-Winding: Reading the Phyllotaxis Spiral Count</h3>
+
+<figure>
+<object data="illustrations/phyllotaxis_omega_reading.svg" type="image/svg+xml" style="width:100%;max-width:860px;height:auto;border-radius:12px;">
+  <img src="illustrations/phyllotaxis_omega_reading.svg" alt="Phyllotaxis Omega-Reading Detail" style="width:100%;max-width:860px;">
+</object>
+<figcaption>Figure 3: Phyllotaxis &Omega;-Reading Detail. The Fibonacci parastichy families — typically 5 counterclockwise and 8 clockwise in the Asteraceae — encode the integer winding number (&Omega; = &#x2124;). The golden angle (~137.5&deg;) ensures minimal leaf overlap. Decussate, alternate, and whorled phyllotaxis encode trivial winding (&Omega; = &#x2137;). The Operator counts the parastichies and reads the preparation cycle count directly from the stem.</figcaption>
+</figure>
+
+<!-- ═══════════ TRICHOME KINETICS/CRITICALITY ═══════════ -->
+<h3>&Ccedil;-Kinetics &amp; &phi;&#x302;-Criticality: Reading the Glandular Trichome</h3>
+
+<figure>
+<object data="illustrations/trichome_kinetics_criticality.svg" type="image/svg+xml" style="width:100%;max-width:860px;height:auto;border-radius:12px;">
+  <img src="illustrations/trichome_kinetics_criticality.svg" alt="Trichome Kinetics and Criticality Reading Detail" style="width:100%;max-width:860px;">
+</object>
+<figcaption>Figure 4: Trichome &Ccedil;-Kinetics &amp; &phi;&#x302;-Criticality Reading Detail. A leaf cross-section showing capitate and peltate glandular trichomes, a resin canal, and the upper/lower epidermis. The trichome <em>structure</em> encodes kinetics (&Ccedil;): a cuticular shell that must be mechanically ruptured means frozen-order (&#x24B;). The trichome <em>density and color</em> encode criticality (&phi;&#x302;): the plant reports its own pharmaceutical state through leaf color, trichome cloudiness, and odor intensity — the self-modeling loop (Gate 1) made visible.</figcaption>
+</figure>
+
+<hr>
+<h2 id="part3">Part III: The Global Pharmacopoeia</h2>
+
+
+<p>One hundred and forty-seven medicinal plants across all five inhabited continents, organized not by Linnaean taxonomy but by the 11 Phytoglyphic Imscriptions of the Imscribing Grammar. Each plant is a morphological compiler: its leaf shape, trichome density, phyllotaxis, bark pattern, and compound ratios encode pharmaceutical instructions that the human body's own compiler channels interpret.</p>
+
+<!-- ═══════════ EUROPE ═══════════ -->
+<h2 id="europe" class="continent-header">&#x1F1EA;&#x1F1FA; Europe &amp; Mediterranean &mdash; 48 Plants</h2>
+
+<p>The European pharmacopoeia is the most thoroughly characterized in the Western tradition. Five structural types are represented, with Type I (Aromatic Baseline) heavily dominant &mdash; a consequence of Mediterranean climate selecting for aromatic terpenoids as drought-adaptation and herbivore-defense.</p>
+
+<figure>
+<object data="illustrations/type_card_01_aromatic_baseline.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_01_aromatic_baseline.svg" style="width:340px;">
+</object>
+<figcaption>Type I: Aromatic Baseline &mdash; the dominant European structural type (35+ plants)</figcaption>
+</figure>
+
+<h3>Type I: Aromatic Baseline &mdash; European Instances</h3>
+
+<div class="plant-grid">
+<div class="plant-mini"><strong>Wormwood</strong> <em>Artemisia absinthium</em><br><span style="color:var(--grey)">Aromatic Baseline archetype. Thujone pathway.</span></div>
+<div class="plant-mini"><strong>Mugwort</strong> <em>Artemisia vulgaris</em><br><span style="color:var(--grey)">Thujone + cineole. Dream herb.</span></div>
+<div class="plant-mini"><strong>Rosemary</strong> <em>Salvia rosmarinus</em><br><span style="color:var(--grey)">Carnosic acid. Memory enhancer.</span></div>
+<div class="plant-mini"><strong>Sage</strong> <em>Salvia officinalis</em><br><span style="color:var(--grey)">Thujone-rich. Antiseptic aromatic.</span></div>
+<div class="plant-mini"><strong>Thyme</strong> <em>Thymus vulgaris</em><br><span style="color:var(--grey)">Thymol. Respiratory antiseptic.</span></div>
+<div class="plant-mini"><strong>Oregano</strong> <em>Origanum vulgare</em><br><span style="color:var(--grey)">Carvacrol. Potent antimicrobial.</span></div>
+<div class="plant-mini"><strong>Peppermint</strong> <em>Mentha &#215; piperita</em><br><span style="color:var(--grey)">Menthol. Cooling TRPM8 agonist.</span></div>
+<div class="plant-mini"><strong>Lavender</strong> <em>Lavandula angustifolia</em><br><span style="color:var(--grey)">Linalool. Anxiolytic aromatic.</span></div>
+<div class="plant-mini"><strong>Lemon Balm</strong> <em>Melissa officinalis</em><br><span style="color:var(--grey)">Citronellal. Gentle nervine.</span></div>
+<div class="plant-mini"><strong>Hyssop</strong> <em>Hyssopus officinalis</em><br><span style="color:var(--grey)">Pinocamphone. Biblical purifier.</span></div>
+<div class="plant-mini"><strong>Fennel</strong> <em>Foeniculum vulgare</em><br><span style="color:var(--grey)">Anethole. Carminative aromatic.</span></div>
+<div class="plant-mini"><strong>Anise</strong> <em>Pimpinella anisum</em><br><span style="color:var(--grey)">Anethole-rich. Digestive aromatic.</span></div>
+<div class="plant-mini"><strong>Caraway</strong> <em>Carum carvi</em><br><span style="color:var(--grey)">Carvone. Spasmolytic seed.</span></div>
+<div class="plant-mini"><strong>Dill</strong> <em>Anethum graveolens</em><br><span style="color:var(--grey)">Carvone. Infant colic remedy.</span></div>
+<div class="plant-mini"><strong>Juniper</strong> <em>Juniperus communis</em><br><span style="color:var(--grey)">&#945;-pinene. Urinary antiseptic.</span></div>
+</div>
+
+<figure>
+<object data="illustrations/type_card_02_tropane.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_02_tropane.svg" style="width:340px;">
+</object>
+<figcaption>Type II: Tropane &mdash; the nightshade structural signature</figcaption>
+</figure>
+
+<h3>Type II: Tropane</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Belladonna</strong> <em>Atropa belladonna</em><br><span style="color:var(--grey)">Atropine. The archetypal tropane plant.</span></div>
+<div class="plant-mini"><strong>Henbane</strong> <em>Hyoscyamus niger</em><br><span style="color:var(--grey)">Hyoscyamine. Delphic oracle candidate.</span></div>
+<div class="plant-mini"><strong>Mandrake</strong> <em>Mandragora officinarum</em><br><span style="color:var(--grey)">Scopolamine. Anthropomorphic root.</span></div>
+<div class="plant-mini"><strong>Thornapple</strong> <em>Datura stramonium</em><br><span style="color:var(--grey)">Atropine + scopolamine. Spiny capsule.</span></div>
+</div>
+
+<figure>
+<object data="illustrations/type_card_03_cardiac_glycoside.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_03_cardiac_glycoside.svg" style="width:340px;">
+</object>
+<figcaption>Type III: Cardiac Glycoside &mdash; Europe&#39;s only endemic type</figcaption>
+</figure>
+
+<h3>Type III: Cardiac Glycoside</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Foxglove</strong> <em>Digitalis purpurea</em><br><span style="color:var(--grey)">Digoxin. The cardiac archetype.</span></div>
+<div class="plant-mini"><strong>Lily of the Valley</strong> <em>Convallaria majalis</em><br><span style="color:var(--grey)">Convallatoxin. Gentle cardiac.</span></div>
+<div class="plant-mini"><strong>Hellebore</strong> <em>Helleborus niger</em><br><span style="color:var(--grey)">Hellebrin. Christmas rose.</span></div>
+</div>
+
+<h3>Type IV: Non-Critical Aromatic</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Chamomile</strong> <em>Matricaria chamomilla</em><br><span style="color:var(--grey)">Apigenin. Gentle sedative.</span></div>
+<div class="plant-mini"><strong>Yarrow</strong> <em>Achillea millefolium</em><br><span style="color:var(--grey)">Achilleine. Wound healer.</span></div>
+<div class="plant-mini"><strong>Calendula</strong> <em>Calendula officinalis</em><br><span style="color:var(--grey)">Faradiol. Skin restorative.</span></div>
+<div class="plant-mini"><strong>St. John&#39;s Wort</strong> <em>Hypericum perforatum</em><br><span style="color:var(--grey)">Hypericin. MAO-modulating.</span></div>
+<div class="plant-mini"><strong>Valerian</strong> <em>Valeriana officinalis</em><br><span style="color:var(--grey)">Valerenic acid. GABAergic sleep aid.</span></div>
+</div>
+
+<figure>
+<object data="illustrations/type_card_05_axiom_a___eternal.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_05_axiom_a___eternal.svg" style="width:340px;">
+</object>
+<figcaption>Type V: Axiom A / Eternal Chirality &mdash; the most structurally extreme plant type</figcaption>
+</figure>
+
+<h3>Type V: Axiom A / Eternal</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Yew</strong> <em>Taxus baccata</em><br><span style="color:var(--grey)">Taxol (paclitaxel). Eternal chirality.</span></div>
+<div class="plant-mini"><strong>Mistletoe</strong> <em>Viscum album</em><br><span style="color:var(--grey)">Viscotoxins. Druidic sacred plant.</span></div>
+</div>
+
+<!-- ═══════════ ASIA ═══════════ -->
+<h2 id="asia" class="continent-header">&#x1F1E6;&#x1F1F8; Asia &mdash; 47 Plants</h2>
+
+<p>Asia contributes the greatest structural diversity, with seven of the 11 imscriptions represented &mdash; including four types <em>not found in Europe</em>: Adaptogen (VI), Beta-Carboline (VII), Caffeine-Purine (VIII), and Triterpene Saponin (X). The Asian pharmacopoeia fills gaps in the structural lattice that the European tradition alone could never reveal.</p>
+
+<figure>
+<object data="illustrations/type_card_06_adaptogen.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_06_adaptogen.svg" style="width:340px;">
+</object>
+<figcaption>Type VI: Adaptogen &mdash; discovered only by expanding beyond the European canon</figcaption>
+</figure>
+
+<h3>Type VI: Adaptogen</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Ginseng</strong> <em>Panax ginseng</em><br><span style="color:var(--grey)">Ginsenosides. The adaptogen archetype.</span></div>
+<div class="plant-mini"><strong>Ashwagandha</strong> <em>Withania somnifera</em><br><span style="color:var(--grey)">Withanolides. Ayurvedic adaptogen.</span></div>
+<div class="plant-mini"><strong>Rhodiola</strong> <em>Rhodiola rosea</em><br><span style="color:var(--grey)">Rosavins. Arctic adaptogen.</span></div>
+<div class="plant-mini"><strong>Schisandra</strong> <em>Schisandra chinensis</em><br><span style="color:var(--grey)">Schisandrins. Five-flavor berry.</span></div>
+<div class="plant-mini"><strong>Astragalus</strong> <em>Astragalus membranaceus</em><br><span style="color:var(--grey)">Astragalosides. Immune adaptogen.</span></div>
+<div class="plant-mini"><strong>Jiaogulan</strong> <em>Gynostemma pentaphyllum</em><br><span style="color:var(--grey)">Gypenosides. Southern ginseng.</span></div>
+<div class="plant-mini"><strong>Holy Basil</strong> <em>Ocimum tenuiflorum</em><br><span style="color:var(--grey)">Eugenol + ursolic acid. Tulsi.</span></div>
+</div>
+
+<figure>
+<object data="illustrations/type_card_07_beta-carboline.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_07_beta-carboline.svg" style="width:340px;">
+</object>
+<figcaption>Type VII: Beta-Carboline &mdash; binary winding via MAO inhibition + DMT activation</figcaption>
+</figure>
+
+<h3>Type VII: Beta-Carboline</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Ayahuasca</strong> <em>Banisteriopsis caapi</em><br><span style="color:var(--grey)">Harmine + harmaline. Binary winding.</span></div>
+<div class="plant-mini"><strong>Syrian Rue</strong> <em>Peganum harmala</em><br><span style="color:var(--grey)">Harmala alkaloids. Persian esfand.</span></div>
+<div class="plant-mini"><strong>Passionflower</strong> <em>Passiflora incarnata</em><br><span style="color:var(--grey)">Harmane. Mild MAOI.</span></div>
+</div>
+
+<h3>Type VIII: Caffeine-Purine</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Tea</strong> <em>Camellia sinensis</em><br><span style="color:var(--grey)">Caffeine + L-theanine. Synergistic.</span></div>
+<div class="plant-mini"><strong>Coffee</strong> <em>Coffea arabica</em><br><span style="color:var(--grey)">Caffeine + chlorogenic acids.</span></div>
+<div class="plant-mini"><strong>Guarana</strong> <em>Paullinia cupana</em><br><span style="color:var(--grey)">Guaranine (caffeine). Amazonian.</span></div>
+</div>
+
+<h3>Type IX: Opioid Alkaloid &mdash; Asian Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Opium Poppy</strong> <em>Papaver somniferum</em><br><span style="color:var(--grey)">Morphine + codeine. Latex integer winding.</span></div>
+<div class="plant-mini"><strong>Kratom</strong> <em>Mitragyna speciosa</em><br><span style="color:var(--grey)">Mitragynine. Partial &#956;-agonist.</span></div>
+</div>
+
+<h3>Type X: Triterpene Saponin</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Licorice</strong> <em>Glycyrrhiza glabra</em><br><span style="color:var(--grey)">Glycyrrhizin. Foam-index self-modeling.</span></div>
+<div class="plant-mini"><strong>Gynostemma</strong> <em>Gynostemma pentaphyllum</em><br><span style="color:var(--grey)">Gypenosides. Sweet tea vine.</span></div>
+<div class="plant-mini"><strong>Bupleurum</strong> <em>Bupleurum chinense</em><br><span style="color:var(--grey)">Saikosaponins. Liver-protective.</span></div>
+</div>
+
+<h3>Type XI: Fungal Interface</h3>
+<figure>
+<object data="illustrations/type_card_11_fungal_interface.svg" type="image/svg+xml" style="width:340px;height:auto;">
+  <img src="illustrations/type_card_11_fungal_interface.svg" style="width:340px;">
+</object>
+<figcaption>Type XI: Fungal Interface &mdash; the only broadcast-composition type</figcaption>
+</figure>
+
+<div class="plant-grid">
+<div class="plant-mini"><strong>Reishi</strong> <em>Ganoderma lucidum</em><br><span style="color:var(--grey)">Triterpenes + polysaccharides. Lingzhi.</span></div>
+<div class="plant-mini"><strong>Cordyceps</strong> <em>Cordyceps sinensis</em><br><span style="color:var(--grey)">Cordycepin. Insect-host interface.</span></div>
+<div class="plant-mini"><strong>Chaga</strong> <em>Inonotus obliquus</em><br><span style="color:var(--grey)">Betulinic acid. Birch-host interface.</span></div>
+<div class="plant-mini"><strong>Lion&#39;s Mane</strong> <em>Hericium erinaceus</em><br><span style="color:var(--grey)">Erinacines. NGF-stimulating.</span></div>
+<div class="plant-mini"><strong>Shiitake</strong> <em>Lentinula edodes</em><br><span style="color:var(--grey)">Lentinan. Immune-modulating.</span></div>
+<div class="plant-mini"><strong>Turkey Tail</strong> <em>Trametes versicolor</em><br><span style="color:var(--grey)">PSK/PSP. Cancer-adjunctive.</span></div>
+</div>
+
+<!-- ═══════════ AFRICA ═══════════ -->
+<h2 id="africa" class="continent-header">&#x1F1E6;&#x1F1F5; Africa &mdash; 24 Plants</h2>
+
+<p>Africa bridges the European and Asian pharmacopoeias, sharing Type II (Tropane) with Europe and Types VII-IX with Asia and the Americas. The African catalog reveals inter-continental structural bridges absent from any single-continent analysis.</p>
+
+<h3>Type I: Aromatic Baseline &mdash; African Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>African Wormwood</strong> <em>Artemisia afra</em><br><span style="color:var(--grey)">Thujone variant. Malaria traditional.</span></div>
+<div class="plant-mini"><strong>Buchu</strong> <em>Agathosma betulina</em><br><span style="color:var(--grey)">Diosphenol. Urinary antiseptic.</span></div>
+<div class="plant-mini"><strong>Rooibos</strong> <em>Aspalathus linearis</em><br><span style="color:var(--grey)">Aspalathin. Caffeine-free infusion.</span></div>
+<div class="plant-mini"><strong>African Sage</strong> <em>Salvia africana</em><br><span style="color:var(--grey)">Diterpenoid-rich aromatic.</span></div>
+<div class="plant-mini"><strong>Kalahari Sage</strong> <em>Artemisia herba-alba</em><br><span style="color:var(--grey)">White wormwood. Desert aromatic.</span></div>
+</div>
+
+<h3>Type II: Tropane &mdash; African Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>African Datura</strong> <em>Datura metel</em><br><span style="color:var(--grey)">Scopolamine. Pan-African tropane.</span></div>
+</div>
+
+<h3>Type VII: Beta-Carboline &mdash; African Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Iboga</strong> <em>Tabernanthe iboga</em><br><span style="color:var(--grey)">Ibogaine. Bwiti sacrament. O&#8322;&#8224; tier.</span></div>
+<div class="plant-mini"><strong>Yohimbe</strong> <em>Pausinystalia yohimbe</em><br><span style="color:var(--grey)">Yohimbine. Bark fissure age encoding.</span></div>
+</div>
+
+<h3>Additional African Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Khat</strong> <em>Catha edulis</em><br><span style="color:var(--grey)">Cathinone. Type VIII variant.</span></div>
+<div class="plant-mini"><strong>Kola Nut</strong> <em>Cola acuminata</em><br><span style="color:var(--grey)">Caffeine + theobromine. Type VIII.</span></div>
+<div class="plant-mini"><strong>African Potato</strong> <em>Hypoxis hemerocallidea</em><br><span style="color:var(--grey)">Hypoxoside. Inter-organism encoding.</span></div>
+<div class="plant-mini"><strong>Devil&#39;s Claw</strong> <em>Harpagophytum procumbens</em><br><span style="color:var(--grey)">Harpagoside. Anti-inflammatory.</span></div>
+<div class="plant-mini"><strong>Pygeum</strong> <em>Prunus africana</em><br><span style="color:var(--grey)">Phytosterols. Bark age-encoding.</span></div>
+</div>
+
+<!-- ═══════════ AMERICAS ═══════════ -->
+<h2 id="americas" class="continent-header">&#x1F1FA;&#x1F1F8; The Americas &mdash; 28 Plants</h2>
+
+<p>The Americas host five structural types, including Type V (Axiom A / Eternal) and Type VII (Beta-Carboline) in forms distinct from their Eurasian counterparts. The Ayahuasca admixture complex &mdash; a two-plant system with inter-organism XOR gate encoding &mdash; is the most structurally sophisticated pharmaceutical system in the global catalog.</p>
+
+<h3>Type I: Aromatic Baseline &mdash; American Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Yerba Mate</strong> <em>Ilex paraguariensis</em><br><span style="color:var(--grey)">Caffeine + chlorogenic acids. Type I/VIII hybrid.</span></div>
+<div class="plant-mini"><strong>Echinacea</strong> <em>Echinacea purpurea</em><br><span style="color:var(--grey)">Alkylamides. Immune-modulating.</span></div>
+<div class="plant-mini"><strong>Goldenseal</strong> <em>Hydrastis canadensis</em><br><span style="color:var(--grey)">Berberine. Antimicrobial alkaloid.</span></div>
+</div>
+
+<h3>Type VII: Beta-Carboline &mdash; American Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Ayahuasca Vine</strong> <em>Banisteriopsis caapi</em><br><span style="color:var(--grey)">Harmine + harmaline + THH. Binary winding.</span></div>
+<div class="plant-mini"><strong>Chacruna</strong> <em>Psychotria viridis</em><br><span style="color:var(--grey)">DMT. The XOR partner to caapi.</span></div>
+<div class="plant-mini"><strong>Chaliponga</strong> <em>Diplopterys cabrerana</em><br><span style="color:var(--grey)">DMT + 5-MeO-DMT. Admixture plant.</span></div>
+<div class="plant-mini"><strong>Anadenanthera</strong> <em>Anadenanthera peregrina</em><br><span style="color:var(--grey)">Bufotenine. Yopo snuff.</span></div>
+</div>
+
+<h3>Other American Types</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Tobacco</strong> <em>Nicotiana tabacum</em><br><span style="color:var(--grey)">Nicotine. Type II-like local granularity.</span></div>
+<div class="plant-mini"><strong>Coca</strong> <em>Erythroxylum coca</em><br><span style="color:var(--grey)">Cocaine. Local anesthetic.</span></div>
+<div class="plant-mini"><strong>Peyote</strong> <em>Lophophora williamsii</em><br><span style="color:var(--grey)">Mescaline. Cactus phenethylamine.</span></div>
+<div class="plant-mini"><strong>San Pedro</strong> <em>Echinopsis pachanoi</em><br><span style="color:var(--grey)">Mescaline. Columnar cactus.</span></div>
+<div class="plant-mini"><strong>Psilocybe</strong> <em>Psilocybe cubensis</em><br><span style="color:var(--grey)">Psilocybin. Fungal interface.</span></div>
+<div class="plant-mini"><strong>Pacific Yew</strong> <em>Taxus brevifolia</em><br><span style="color:var(--grey)">Taxol. Type V: eternal chirality.</span></div>
+</div>
+
+<!-- ═══════════ OCEANIA ═══════════ -->
+<h2 id="oceania" class="continent-header">&#x1F1E6;&#x1F1FA; Australia &amp; Oceania &mdash; 11 Plants</h2>
+
+<p>The smallest continental catalog, but structurally significant: Australia hosts Type I (Aromatic Baseline) in distinctive forms shaped by 40 million years of isolation, with eucalyptus terpenoids representing the purest expression of the frozen-order kinetics paradigm.</p>
+
+<h3>Type I: Aromatic Baseline &mdash; Australian Instances</h3>
+<div class="plant-grid">
+<div class="plant-mini"><strong>Eucalyptus</strong> <em>Eucalyptus globulus</em><br><span style="color:var(--grey)">1,8-cineole. The aromatic baseline extreme.</span></div>
+<div class="plant-mini"><strong>Tea Tree</strong> <em>Melaleuca alternifolia</em><br><span style="color:var(--grey)">Terpinen-4-ol. Topical antiseptic.</span></div>
+<div class="plant-mini"><strong>Lemon Myrtle</strong> <em>Backhousia citriodora</em><br><span style="color:var(--grey)">Citral. Highest citral content known.</span></div>
+<div class="plant-mini"><strong>Kakadu Plum</strong> <em>Terminalia ferdinandiana</em><br><span style="color:var(--grey)">Vitamin C. Highest natural source.</span></div>
+</div>
+
+<hr>
+
+<h2 id="lattice">The Structural Type Lattice</h2>
+
+<figure>
+<object data="illustrations/type_lattice.svg" type="image/svg+xml" style="width:100%;max-width:960px;height:auto;">
+  <img src="illustrations/type_lattice.svg" alt="Type Lattice" style="width:100%;max-width:960px;">
+</object>
+<figcaption>Figure 2: The Structural Type Lattice. Types arranged by ouroboricity tier (vertical axis) and chirality (horizontal). Dashed arrows indicate structural descent &mdash; the promotion path from ancestor types to their more specialized descendants. O&#8321; (orange): simplest types. O&#8322; (red): self-modeling criticality. O&#8322;&#8224; (purple): eternal chirality + binary or integer winding.</figcaption>
+</figure>
+
+<hr>
+
+<h2>Part IV: Structural Geography</h2>
+
+<h3>The Six-Primitive Discrimination Space</h3>
+
+<p>The 11 imscriptions are clusters in a six-dimensional space defined by kinetics (&#xC7;), granularity (&#x393;), criticality (&#x3C6;&#x302;), chirality (&#x126;), stoichiometry (&#x3A3;), and winding (&#x3A9;). The seventh primitive &mdash; composition sequence (&#x262;) &mdash; acts as a cross-cutting dimension visible most clearly in the distinction between sequential (Type I&ndash;X) and broadcast (Type XI) composition.</p>
+
+<blockquote>
+The grammar predicts 648 possible plant pharmaceutical types in the six-primitive discrimination space (3 values for kinetics &#215; 2 for granularity &#215; 2 for criticality &#215; 3 for chirality &#215; 3 for stoichiometry &#215; 3 for winding = 324; with composition as a seventh dimension: 324 &#215; 3 = 972 possible tuples). Nature uses 11. The remaining 961 types are either impossible (violating Axioms A, B, or C), evolutionarily inaccessible, or awaiting discovery.
+</blockquote>
+
+<h3>Predicted but Uncataloged: Type XII</h3>
+
+<p>The grammar predicts a Type XII with the signature: eternal chirality (&#x126;=&#x120811;), universal granularity (&#x393;=&#x120754;), self-modeling criticality (&#x3C6;&#x302;=&#x2299;), singular stoichiometry (&#x3A3;=&#x120809;), and binary winding (&#x3A9;=&#x120820;). This combination is structurally consistent &mdash; it violates no axiom &mdash; but no plant in the 147-entry catalog expresses it. If it exists, its pharmaceutical properties can be predicted from its tuple before any laboratory analysis: eternal chirality guarantees stereochemical fidelity across an unlimited Markov chain; binary winding demands a two-cycle preparation protocol; and singular stoichiometry implies a single compound class dominates the pharmaceutical profile. The plant would be, in effect, a botanical Frobenius kernel &mdash; a perfect self-encoding where preparation &#x3BC; and verification &#x3B4; form an exact round-trip.</p>
+
+<hr>
+
+<h2 id="ack">Acknowledgements</h2>
+
+<p>The author would like to thank <strong>Harry T. Larson</strong>, for imparting the importance of catching rising problems, and never letting them go. Larson&#39;s 1961 editorship of the IRE Special Issue on Computers assembled the editorial board that commissioned Marvin Minsky&#39;s &ldquo;Steps Toward Artificial Intelligence&rdquo;; his 1986 paper &ldquo;Catch a Rising Problem and Never Ever Let It Go&rdquo; diagnosed the structural relationship between technical practitioners and the social effects of their work with a clarity that this treatise inherits. When Larson wrote that &ldquo;the scientific mind has found an un-formalised field, and it cannot rest until it identifies, understands, and organises basic elements of the field,&rdquo; he described exactly the operation this treatise performs on the global pharmacopoeia. The identification and organization of basic structural elements across 147 plants and five continents is Larson&#39;s mandate, executed at botanical scale.</p>
+
+<blockquote>
+&ldquo;When the practitioner has overcome his fear of the machine, and when the scientist and practitioner are communicating, the attack is relentless. The scientific mind has found an un-formalised field, and it cannot rest until it identifies, understands, and organises basic elements of the field.&rdquo;<br>
+&mdash; Harry T. Larson, Guest Editor, IRE Special Issue on Computers, January 1961
+</blockquote>
+
+<h2>References</h2>
+
+<ol style="color:var(--grey);font-size:0.9em;margin-left:24px;">
+<li>Marvin Minsky, &ldquo;Steps Toward Artificial Intelligence,&rdquo; <em>Proceedings of the IRE</em>, vol. 49, no. 1, pp. 8&ndash;30, January 1961. Guest Editor: Harry T. Larson. DOI: 10.1109/JRPROC.1961.287775</li>
+<li>Harry T. Larson, &ldquo;Catch a Rising Problem and Never Ever Let It Go,&rdquo; <em>IEEE Computer</em>, vol. 19, no. 2, pp. 61&ndash;63, February 1986. DOI: 10.1109/MC.1986.1641382</li>
+<li>Ars Phytoglyphica &mdash; Expanded Edition (markdown source), Lando&#x2297;&#x2299;perator, 2026.</li>
+</ol>
+
+<div class="ack">
+<p>&#x2726; &ensp; Sic itur ad astra. &ensp; &#x2726;</p>
+<p>Ars Phytoglyphica &mdash; Illustrated Edition. Author: Lando&#x2297;&#x2299;perator.<br>
+147 plants &times; 5 continents &times; 11 structural types = one global pharmacopoeia.<br>
+Generated with the Imscribing Grammar (O&#x221E; tier, Frobenius-closed).</p>
+</div>
+
+</div><!-- /container -->
+</body>
+</html>

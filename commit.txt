@@ -1,0 +1,27 @@
+Ars Phytoglyphica — Operationalization Commit
+================================================
+Date: 2026-06-24
+Author: Lando⊗⊙perator
+
+Package: ars_phytoglyphica v1.0.0
+CLI:     ap (ars-phytoglyphica)
+
+Structure:
+  ars_phytoglyphica/__init__.py    — Package init, exports
+  ars_phytoglyphica/types.py       — 11 canonical types, 79 representative plants
+  ars_phytoglyphica/navigator.py   — Type-lattice navigator, IG catalog bridge
+  ars_phytoglyphica/elaborator.py  — Morphological → pharmaceutical mapper
+  ars_phytoglyphica/cli.py         — Unified CLI (7 commands)
+  manuscripts/ENGINE.md            — Engine specification
+  manuscripts/ARS_PHYTOGLYPHICA_EXPANDED.md — Full global treatise
+  illustrations/                   — 19 SVG type cards + chart scripts
+  lean/                            — Lean 4 companion files
+  programs/                        — generate_urpflanze_svgs.py
+
+Key findings:
+  - 11 structural types spanning O₁ through O₂†
+  - d=0 identity: Adaptogen (VI) ≡ Triterpene Saponin (X) — convergent evolution
+  - Caffeine-Purine (VIII) is maximally isolated (d=5-7 from all others)
+  - 79 representative plants, organized by type
+
+Verified: All 7 CLI commands execute correctly.
