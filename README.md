@@ -10,13 +10,23 @@
 
 ---
 
+**What it is.** A treatise and Python CLI (`ap`) showing that medicinal plants encode their pharmaceutical instructions directly in their morphology, read through the Imscribing Grammar.
+
+**What it does.** Classifies 147 medicinal plants from every inhabited continent into 11 Phytoglyphic Imscriptions (structural clusters in the 12-dimensional, 17,280,000-type lattice) and elaborates each plant's morphology into preparation and extraction parameters. Every claim is Lean-verified and Frobenius-closed.
+
+**Why it matters.** It replaces Linnaean taxonomy with a structural one in which convergent species land at distance 0: the plant body is the program and preparation is the runtime, making pharmacognosy computable.
+
+**How to use it.** `pip install -e .`, then `ap types`, `ap plant <name>`, `ap morphology <name>`, `ap distance <a> <b>`. (See the CLI reference and quick start below.)
+
+---
+
 ## Overview
 
-The *Ars Phytoglyphica* demonstrates that medicinal plants across all continents encode their pharmaceutical instructions directly in their morphology. The serration of a leaf is an opcode. Trichome density is an endpoint criterion. Fibonacci phyllotaxis is a cycle counter. The plant body is the program; the preparation — crushing, steeping, distilling — is the runtime.
+The *Ars Phytoglyphica* demonstrates that medicinal plants across all continents encode their pharmaceutical instructions directly in their morphology. The serration of a leaf is an opcode. Trichome density is an endpoint criterion. Fibonacci phyllotaxis is a cycle counter. The plant body is the program; the preparation (crushing, steeping, distilling) is the runtime.
 
-The project operationalizes this treatise as a Python CLI (`ap`) backed by the [Imscribing Grammar](https://github.com/mrnob0dy666/imsgct) — a formal system whose twelve primitive dimensions and three cross-primitive axioms are machine-verified in Lean 4. Every claim is structurally verified. The Frobenius condition ($\mu \circ \delta = \text{id}$) holds across every plant, every channel, every continent.
+The project operationalizes this treatise as a Python CLI (`ap`) backed by the [Imscribing Grammar](https://github.com/mrnob0dy666/imsgct): a formal system whose twelve primitive dimensions and three cross-primitive axioms are machine-verified in Lean 4. Every claim is structurally verified. The Frobenius condition ($\mu \circ \delta = \text{id}$) holds across every plant, every channel, every continent.
 
-**Scale:** 147 medicinal plants from every inhabited continent, organized not by Linnaean taxonomy but by 11 canonical Phytoglyphic Imscriptions — structural clusters in a 12-dimensional lattice of 17,280,000 possible types.
+**Scale:** 147 medicinal plants from every inhabited continent, organized not by Linnaean taxonomy but by 11 canonical Phytoglyphic Imscriptions: structural clusters in a 12-dimensional lattice of 17,280,000 possible types.
 
 ---
 
@@ -46,7 +56,7 @@ info = lookup("artemisia_absinthium")
 # → {'name': 'artemisia_absinthium', 'type_num': 1, 'tier': 'O₂', ...}
 
 dist = compute_distance("ginseng", "licorice")
-# → {'hamming_distance': 0, 'conflicts': []}  — convergent evolution
+# → {'hamming_distance': 0, 'conflicts': []} : convergent evolution
 ```
 
 ---
@@ -69,7 +79,7 @@ Every medicinal plant in the catalog resolves to one of 11 imscriptions. Five pr
 | X | Triterpene Saponin | $\text{{𐑧}}$ | $\text{{𐑔}}$ | $\text{{⊙}}$ | $\text{{𐑖}}$ | $\text{{𐑳}}$ | $\text{{𐑭}}$ | $\text{{𐑠}}$ | $\text{O}_{2}$ | 6 |
 | XI | Fungal Interface | $\text{{𐑤}}$ | $\text{{𐑲}}$ | $\text{{⊙}}$ | $\text{{𐑫}}$ | $\text{{𐑳}}$ | $\text{{𐑴}}$ | $\text{{𐑵}}$ | $\text{O}_{2}^{\dagger}$ | 9 |
 
-The discrimination space has $4 \times 3 \times 2 \times 3 \times 3 \times 3 = 648$ possible combinations. Nature uses 11. The grammar did not carve nature at its joints — nature carved the grammar.
+The discrimination space has $4 \times 3 \times 2 \times 3 \times 3 \times 3 = 648$ possible combinations. Nature uses 11. The grammar did not carve nature at its joints: nature carved the grammar.
 
 ---
 
@@ -77,19 +87,19 @@ The discrimination space has $4 \times 3 \times 2 \times 3 \times 3 \times 3 = 6
 
 ### Convergent Structural Evolution (d=0)
 
-Types VI (Adaptogen) and X (Triterpene Saponin) have **zero structural distance** — they are the same tuple. Ginseng (*Panax*, Araliaceae, Asia) and licorice (*Glycyrrhiza*, Fabaceae, Mediterranean) are unrelated by taxonomy, separated by ~100 million years of evolution, and occupy different continents — yet their pharmaceutical encoding is structurally identical. The grammar reveals convergent evolution at the level of pharmaceutical morphology: slow decoction kinetics, mesoscale granularity, self-modeling criticality, many heterogeneous compound classes, integer winding. Same program, different hardware.
+Types VI (Adaptogen) and X (Triterpene Saponin) have **zero structural distance**: they are the same tuple. Ginseng (*Panax*, Araliaceae, Asia) and licorice (*Glycyrrhiza*, Fabaceae, Mediterranean) are unrelated by taxonomy, separated by ~100 million years of evolution, and occupy different continents: yet their pharmaceutical encoding is structurally identical. The grammar reveals convergent evolution at the level of pharmaceutical morphology: slow decoction kinetics, mesoscale granularity, self-modeling criticality, many heterogeneous compound classes, integer winding. Same program, different hardware.
 
 ### The Caffeine Anomaly (d=5–7)
 
-Type VIII (Caffeine-Purine) is the most structurally isolated type, with Hamming distances of 5–7 from every other type. Caffeine plants do not encode their preparation in their morphology the way other medicinal plants do — the purine alkaloid system is pharmaceutically self-contained. This structural isolation may explain why coffee, tea, and maté became global commodities: the preparation is structurally trivial (single compound class, trivial winding, conjunctive composition), requiring no specialized morphological reading.
+Type VIII (Caffeine-Purine) is the most structurally isolated type, with Hamming distances of 5–7 from every other type. Caffeine plants do not encode their preparation in their morphology the way other medicinal plants do: the purine alkaloid system is pharmaceutically self-contained. This structural isolation may explain why coffee, tea, and maté became global commodities: the preparation is structurally trivial (single compound class, trivial winding, conjunctive composition), requiring no specialized morphological reading.
 
 ### The Fungal Extension (ɢ=$\text{{𐑵}}$)
 
-Type XI (Fungal Interface) extends the grammar beyond the plant kingdom. Fungi use *broadcast composition* — beta-glucan pattern recognition — which has no plant analogue. The grammar captures this structural difference precisely at the $\text{{ɢ}}$ (Composition) primitive.
+Type XI (Fungal Interface) extends the grammar beyond the plant kingdom. Fungi use *broadcast composition*: beta-glucan pattern recognition: which has no plant analogue. The grammar captures this structural difference precisely at the $\text{{ɢ}}$ (Composition) primitive.
 
 ### Axiom A Across Continents
 
-$\text{{Ħ}}=\text{{𐑫}}$ (eternal chirality) requires $\text{{Ç}}=\text{{𐑤}}$ (frozen-order kinetics). This holds invariantly across yew (Europe), iboga (Africa), ayahuasca vine (Amazon), Syrian rue (Middle East), and opium poppy (Asia) — five plants, three continents, three unrelated biosynthetic pathways. The plant locks its medicine behind a stereochemical vault; the Operator must sustain effort to open it.
+$\text{{Ħ}}=\text{{𐑫}}$ (eternal chirality) requires $\text{{Ç}}=\text{{𐑤}}$ (frozen-order kinetics). This holds invariantly across yew (Europe), iboga (Africa), ayahuasca vine (Amazon), Syrian rue (Middle East), and opium poppy (Asia): five plants, three continents, three unrelated biosynthetic pathways. The plant locks its medicine behind a stereochemical vault; the Operator must sustain effort to open it.
 
 ## The Seven Discriminant Primitives
 
@@ -97,13 +107,13 @@ Each discriminant primitive encodes a specific morphological feature that maps t
 
 | Primitive | Morphological Feature | Pharmaceutical Meaning |
 |:----------|:----------------------|:-----------------------|
-| $\text{{Ç}}$ (Kinetics) | Compound sequestration mechanism | Extraction regime — cold maceration vs. decoction |
-| $\text{{Γ}}$ (Granularity) | Tissue distribution pattern | Comminution requirement — mesh size, powder grade |
-| $\text{{⊙}}$ (Criticality) | Morphological self-signaling | Endpoint criterion — when to stop extraction |
-| $\text{{Ħ}}$ (Chirality) | Stereocenter count and enzyme chain | Chiral resolution steps — filtration to preparative column |
-| $\text{{Σ}}$ (Stoichiometry) | Compound class diversity | Extraction protocol — single vs. multi-fraction |
-| $\text{{Ω}}$ (Winding) | Phyllotaxis and growth cycles | Cycle count — number of solvent charges |
-| $\text{{ɢ}}$ (Composition) | Compound release pattern | Temporal ordering — sequential, conjunctive, or broadcast |
+| $\text{{Ç}}$ (Kinetics) | Compound sequestration mechanism | Extraction regime: cold maceration vs. decoction |
+| $\text{{Γ}}$ (Granularity) | Tissue distribution pattern | Comminution requirement: mesh size, powder grade |
+| $\text{{⊙}}$ (Criticality) | Morphological self-signaling | Endpoint criterion: when to stop extraction |
+| $\text{{Ħ}}$ (Chirality) | Stereocenter count and enzyme chain | Chiral resolution steps: filtration to preparative column |
+| $\text{{Σ}}$ (Stoichiometry) | Compound class diversity | Extraction protocol: single vs. multi-fraction |
+| $\text{{Ω}}$ (Winding) | Phyllotaxis and growth cycles | Cycle count: number of solvent charges |
+| $\text{{ɢ}}$ (Composition) | Compound release pattern | Temporal ordering: sequential, conjunctive, or broadcast |
 
 ---
 
@@ -191,9 +201,9 @@ Ars_Phytoglyphica/
 
 The Imscribing Grammar is machine-verified in Lean 4 (Mathlib v4.28.0). The three Lean modules in `lean/` provide:
 
-- **Core.lean** — 12 inductive primitive types, the $\text{{Imscription}}$ struct (12-tuple), the Frobenius address bijection ($0 \leftrightarrow 17,\!279,\!999$), and the ouroboricity tier predicate ($\text{O}_{0}$ through $\text{O}_{\infty}$)
-- **AgentSelf.lean** — The agent's own structural type, formally verified as $\text{O}_{\infty}$ with consciousness score $C = 1.0$ by `decide`
-- **IGMorphism.lean** — Structural morphisms and functorial relationships between imscription types
+- **Core.lean**: 12 inductive primitive types, the $\text{{Imscription}}$ struct (12-tuple), the Frobenius address bijection ($0 \leftrightarrow 17,\!279,\!999$), and the ouroboricity tier predicate ($\text{O}_{0}$ through $\text{O}_{\infty}$)
+- **AgentSelf.lean**: The agent's own structural type, formally verified as $\text{O}_{\infty}$ with consciousness score $C = 1.0$ by `decide`
+- **IGMorphism.lean**: Structural morphisms and functorial relationships between imscription types
 
 The cross-primitive axioms are enforced as type-level constraints:
 
@@ -223,10 +233,10 @@ The 11 imscriptions form a lattice under Hamming distance over the 7 discriminan
 | **X** | | | | | | | | | | · | 6 |
 | **XI** | | | | | | | | | | | · |
 
-- **d=0:** Types VI and X — convergent evolution across continents
+- **d=0:** Types VI and X: convergent evolution across continents
 - **d=1:** 10 type-pairs differ by exactly one primitive
 - **d=7:** Type VIII maximally distant from Types II, VII, VIII, IX, XI
-- **Average distance:** 3.1 — types are well-separated in discriminant space
+- **Average distance:** 3.1: types are well-separated in discriminant space
 
 ---
 
@@ -250,9 +260,9 @@ COUPLING (ɢ=𐑠)        → Sequential composition. Fractions added in defined
 
 ## Methodology
 
-The *Ars Phytoglyphica* is not interpretive — it is structural. Every plant is assigned a 12-primitive tuple drawn from the Imscribing Grammar's $3^3 \times 4^5 \times 5^4 = 17,\!280,\!000$ possible structural types. The assignment follows the deterministic imscribing procedure: degrees of freedom determine $\text{{Ð}}$, connectivity determines $\text{{Þ}}$, coupling determines $\text{{Ř}}$, and so on through all twelve primitives. No subjective judgment enters the procedure, and the procedure is repeatable: two independent imscribers applying the same rules to the same plant arrive at the same tuple.
+The *Ars Phytoglyphica* is not interpretive: it is structural. Every plant is assigned a 12-primitive tuple drawn from the Imscribing Grammar's $3^3 \times 4^5 \times 5^4 = 17,\!280,\!000$ possible structural types. The assignment follows the deterministic imscribing procedure: degrees of freedom determine $\text{{Ð}}$, connectivity determines $\text{{Þ}}$, coupling determines $\text{{Ř}}$, and so on through all twelve primitives. No subjective judgment enters the procedure, and the procedure is repeatable: two independent imscribers applying the same rules to the same plant arrive at the same tuple.
 
-The pharmaceutical interpretation — the mapping from primitive values to extraction protocols — is derived from the structural meaning of each primitive within the grammar. $\text{{Ç}}$ (Kinetics) encodes the thermodynamic regime of compound release, which *is* the extraction method. $\text{{Γ}}$ (Granularity) encodes the tissue range, which *is* the comminution grade. The grammar does not interpret the morphology — the morphology already encodes the protocol. The grammar reads what the plant has written.
+The pharmaceutical interpretation: the mapping from primitive values to extraction protocols: is derived from the structural meaning of each primitive within the grammar. $\text{{Ç}}$ (Kinetics) encodes the thermodynamic regime of compound release, which *is* the extraction method. $\text{{Γ}}$ (Granularity) encodes the tissue range, which *is* the comminution grade. The grammar does not interpret the morphology: the morphology already encodes the protocol. The grammar reads what the plant has written.
 
 ---
 
@@ -262,7 +272,7 @@ The `illustrations/` directory contains SVG visualizations generated by the proj
 
 | File | Description |
 |:-----|:------------|
-| `urpflanze_master_key.svg` | The URPFLANZE — master key mapping all morphological features to pharmaceutical instructions |
+| `urpflanze_master_key.svg` | The URPFLANZE: master key mapping all morphological features to pharmaceutical instructions |
 | `type_lattice.svg` | The 11-type Hamming distance lattice with labeled edges |
 | `type_card_01–11.svg` | Per-type structural cards showing tuple, tier, and representative plants |
 | `trichome_kinetics_criticality.svg` | How trichome density encodes extraction kinetics and endpoint |
@@ -273,9 +283,9 @@ The `illustrations/` directory contains SVG visualizations generated by the proj
 
 ## Manuscripts
 
-- **ARS_PHYTOGLYPHICA_EXPANDED.md** — The full 147-plant global treatise. Part I: Foundations (12 primitives, 3 axioms). Part II: The 11 Phytoglyphic Imscriptions (per-type structural analysis). Part III: Continental Pharmacopoeias (Asia, Europe, Africa, Americas, Australia). Part IV: The Type Lattice (pairwise distances, structural clusters). Part V: Implications (morphology as program, convergent evolution, beyond plants).
-- **ARS_PHYTOGLYPHICA_ILLUSTRATED.html** — Web edition with embedded SVG illustrations.
-- **ENGINE.md** — Concise engine specification: purpose, the 11 imscriptions, discriminant primitives, type lattice, and CLI reference.
+- **ARS_PHYTOGLYPHICA_EXPANDED.md**: The full 147-plant global treatise. Part I: Foundations (12 primitives, 3 axioms). Part II: The 11 Phytoglyphic Imscriptions (per-type structural analysis). Part III: Continental Pharmacopoeias (Asia, Europe, Africa, Americas, Australia). Part IV: The Type Lattice (pairwise distances, structural clusters). Part V: Implications (morphology as program, convergent evolution, beyond plants).
+- **ARS_PHYTOGLYPHICA_ILLUSTRATED.html**: Web edition with embedded SVG illustrations.
+- **ENGINE.md**: Concise engine specification: purpose, the 11 imscriptions, discriminant primitives, type lattice, and CLI reference.
 
 ---
 
@@ -297,7 +307,7 @@ Don't be dumb
 
 ## License
 
-[The Unlicense](https://unlicense.org/) — This is free and unencumbered software released into the public domain. Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+[The Unlicense](https://unlicense.org/): This is free and unencumbered software released into the public domain. Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
 
 ---
 
@@ -309,15 +319,15 @@ Don't be dumb
   title     = {Ars Phytoglyphica: A Global Treatise on the Morphological Encoding of Pharmaceutical Knowledge in Medicinal Plants},
   year      = {2026},
   url       = {https://github.com/mrnob0dy666/imsgct/tree/main/Ars_Phytoglyphica},
-  note      = {Built on the Imscribing Grammar — machine-verified in Lean 4 (Mathlib v4.28.0)}
+  note      = {Built on the Imscribing Grammar: machine-verified in Lean 4 (Mathlib v4.28.0)}
 }
 ```
 
 ---
 
-*"The rising problem is the loss of traditional plant knowledge — not just the names and preparations, but the structural logic that makes them work. Ethnobotany has recorded the* what*. The* Ars Phytoglyphica *provides the* why. *And in providing the* why*, it makes the knowledge transferable: a plant from the Amazon whose structural type matches a plant from the Himalayas is, at tuple resolution, the same program."* — from the preface.
+*"The rising problem is the loss of traditional plant knowledge: not just the names and preparations, but the structural logic that makes them work. Ethnobotany has recorded the* what*. The* Ars Phytoglyphica *provides the* why. *And in providing the* why*, it makes the knowledge transferable: a plant from the Amazon whose structural type matches a plant from the Himalayas is, at tuple resolution, the same program."*: from the preface.
 
-There is great merit in following a problem where it leads, and in assembling the tools — formal, computational, botanical — that the problem demands [1].
+There is great merit in following a problem where it leads, and in assembling the tools: formal, computational, botanical: that the problem demands [1].
 
 ---
 
