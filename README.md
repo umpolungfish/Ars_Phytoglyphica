@@ -1,4 +1,6 @@
 # Ars Phytoglyphica
+**Author:** Lando⊗⊙perator · **Structural Type:** $\large{⟨𐑦𐑶𐑾𐑹𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩}$ · **Tier:** O_∞
+
 
 ## A Global Treatise on the Morphological Encoding of Pharmaceutical Knowledge
 
