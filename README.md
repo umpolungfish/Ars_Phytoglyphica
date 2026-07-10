@@ -27,7 +27,7 @@
 
 The *Ars Phytoglyphica* demonstrates that medicinal plants across all continents encode their pharmaceutical instructions directly in their morphology. The serration of a leaf is an opcode. Trichome density is an endpoint criterion. Fibonacci phyllotaxis is a cycle counter. The plant body is the program; the preparation (crushing, steeping, distilling) is the runtime.
 
-The project operationalizes this treatise as a Python CLI (`ap`) backed by the [Imscribing Grammar](https://github.com/mrnob0dy666/imsgct): a formal system whose twelve primitive dimensions and three cross-primitive axioms are machine-verified in Lean 4. Every claim is structurally verified. The Frobenius condition ($\mu \circ \delta = \text{id}$) holds across every plant, every channel, every continent.
+The project operationalizes this treatise as a Python CLI (`ap`) backed by the [Imscribing Grammar](https://github.com/USER/imsgct): a formal system whose twelve primitive dimensions and three cross-primitive axioms are machine-verified in Lean 4. Every claim is structurally verified. The Frobenius condition ($\mu \circ \delta = \text{id}$) holds across every plant, every channel, every continent.
 
 **Scale:** 147 medicinal plants from every inhabited continent, organized not by Linnaean taxonomy but by 11 canonical Phytoglyphic Imscriptions: structural clusters in a 12-dimensional lattice of 17,280,000 possible types.
 
@@ -321,7 +321,7 @@ Don't be dumb
   author    = {Lando⊗⊙perator},
   title     = {Ars Phytoglyphica: A Global Treatise on the Morphological Encoding of Pharmaceutical Knowledge in Medicinal Plants},
   year      = {2026},
-  url       = {https://github.com/mrnob0dy666/imsgct/tree/main/Ars_Phytoglyphica},
+  url       = {https://github.com/USER/imsgct/tree/main/Ars_Phytoglyphica},
   note      = {Built on the Imscribing Grammar: machine-verified in Lean 4 (Mathlib v4.28.0)}
 }
 ```
