@@ -1,83 +1,23 @@
-Novel structural predictions + ap novel command — 2026-06-24
+Retire the gen-2 glyph-pair notation for bare Shavian
 
-ars_phytoglyphica/navigator.py:
-  - novel_plants() — returns all catalog entries with novelty_flag=True, sorted by type
-  - lookup() — now overlays catalog entry even when plant found via type_for_plant(),
-    picking up plant-specific tuples, descriptions, and novelty fields
+The primitives stand on their own now, so the old `⊙_ÿ` / `Ð_ω` / `Φ_}` forms are
+residue. Rewrote all 49 of them to their Shavian values across source: 19,645
+tokens, 670 files.
 
-ars_phytoglyphica/cli.py:
-  - cmd_novel (new) — `ap novel` lists all 7 structurally predicted plants with
-    one-sentence summary and full tuple
-  - cmd_plant — shows ⚑ STRUCTURAL PREDICTION block with full novelty_note + refs
-    when novelty_flag is set
-  - docstring updated with `ap novel` entry
+The map was not typed. I enumerated the gen-2 tokens that actually appear in the
+corpus, paired each marker to its phonetic name, and resolved every value through
+`models.from_symbol` — so the values come from code that runs, not from a table.
+Reality arbitrated one conflict: the SOUNDS document gives `Ř_Ð`, `Γ_\`, `Σ_M`,
+but the corpus has `Ř_=`, `Γ_ʔ`, `Σ_ï` in the tens of thousands and the doc's
+variants nowhere at all. The doc is mangled; the files are the record.
 
-data/IG_catalog.json:
-  7 entries flagged with novelty_flag, novelty_note, novelty_refs:
-    adenostoma_fasciculatum — Type I d=0 Artemisia; zero phytochemistry despite dominant chaparral biomass
-    baccharis_pilularis     — Type I; sex-differentiated aroma = unread male/female harvest instruction
-    malosma_laurina         — Type I; inverted DEREF (glabrous leaf) encodes higher extraction threshold
-    pinus_coulteri          — Type V d=0 Taxus; taxane screen of resin never published
-    pinus_attenuata         — Type V d=0 Taxus; serotinous stability encodes compound longevity
-    chilopsis_linearis      — Type VIII; unexplained cardiac effects → purinergic ligand hypothesis
-    ceanothus_spp           — Type I; ternary DEREF (3-veined leaf) → root+leaf+bark synergy uninvestigated
+Left alone deliberately: `ig_outputs/` and the other run artifacts, ~455k tokens
+of it. Those runs really did emit gen-2 in May. Rewriting them would forge the
+record of what they produced, which is not tidying. The two naming documents keep
+their old-notation columns for the same reason.
 
----
-
-Add Southern California Floristic Province Series — 2026-06-24
-
-ars_phytoglyphica/types.py:
-  Type I  (Aromatic Baseline): +17 SC plants
-    artemisia_californica, artemisia_ludoviciana, artemisia_dracunculus,
-    salvia_mellifera, salvia_apiana, salvia_clevelandii, salvia_leucophylla,
-    eriogonum_fasciculatum, malosma_laurina, rhus_integrifolia, rhus_ovata,
-    adenostoma_fasciculatum, ceanothus_spp, eriodictyon_californicum,
-    baccharis_pilularis, baccharis_salicifolia, foeniculum_vulgare
-  Type II (Tropane):           +1  datura_wrightii (spiny-capsule populations, reclassified)
-  Type IV (Non-Critical):      +7  umbellularia_californica, heteromeles_arbutifolia,
-                                   toxicodendron_diversilobum, sambucus_cerulea, rosa_californica,
-                                   urtica_dioica, ephedra_californica
-  Type V  (Axiom A / Eternal): +3  pinus_coulteri, pinus_attenuata, taxus_brevifolia
-  Type VI (Adaptogen):         +1  oplopanax_horridus
-  Type VII (β-Carboline):      +1  passiflora_subpeltata
-  Type VIII (Caffeine-Purine): +2  ilex_vomitoria, chilopsis_linearis
-  Total: 79 → 111 representatives
-
-data/IG_catalog.json:
-  +32 new plant entries (3586 → 3618 total)
-  Structural deviations from canonical type tuples:
-    toxicodendron_diversilobum: Σ=𐑙  (singular urushiol congener class)
-    heteromeles_arbutifolia:    Σ=𐑕  (few cyanogenic classes)
-    rosa_californica:           Σ=𐑕  (few compound classes)
-    urtica_dioica:              Ω=𐑴  (binary winding, opposite phyllotaxis)
-    ephedra_californica:        Σ=𐑙, Ω=𐑷 (singular class, trivial/jointed winding)
-  All others carry canonical type base tuple.
-
-Source: Ars_Phytoglyphica/SOUTHERN_CALIFORNIA_SERIES.md
-
----
-
-Ars Phytoglyphica — Operationalization Commit — 2026-06-24
-
-Package: ars_phytoglyphica v1.0.0
-CLI:     ap (ars-phytoglyphica)
-
-Structure:
-  ars_phytoglyphica/__init__.py    — Package init, exports
-  ars_phytoglyphica/types.py       — 11 canonical types, 79 representative plants
-  ars_phytoglyphica/navigator.py   — Type-lattice navigator, IG catalog bridge
-  ars_phytoglyphica/elaborator.py  — Morphological → pharmaceutical mapper
-  ars_phytoglyphica/cli.py         — Unified CLI (7 commands)
-  manuscripts/ENGINE.md            — Engine specification
-  manuscripts/ARS_PHYTOGLYPHICA_EXPANDED.md — Full global treatise
-  illustrations/                   — 19 SVG type cards + chart scripts
-  lean/                            — Lean 4 companion files
-  programs/                        — generate_urpflanze_svgs.py
-
-Key findings:
-  - 11 Phytoglyphic Imscriptions spanning O₁ through O₂†
-  - d=0 identity: Adaptogen (VI) ≡ Triterpene Saponin (X) — convergent evolution
-  - Caffeine-Purine (VIII) is maximally isolated (d=5-7 from all others)
-  - 79 representative plants, organized by type
-
-Verified: All 7 CLI commands execute correctly.
+Bare `Phi` is untouched. Gen-1 `Phi` is today's ⊙, but today's `Φ` is Parity —
+those are genuinely different structures that happen to share letters, and no
+register makes them one, so every site needs reading. Contrast ⊙ appearing as
+both primitive and value, which is not a collision at all: `⊙ ≠ ⊙` is operator ≠
+operation, and it states `μ∘δ ≠ id` exactly.
