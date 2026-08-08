@@ -10,7 +10,7 @@
 
 ---
 
-**What it is.** A treatise and Python CLI (`ap`) showing that medicinal plants encode their pharmaceutical instructions directly in their morphology, read through the Imscribing Grammar.
+**What it is.** A treatise and Python CLI (`ars-phyto`) showing that medicinal plants encode their pharmaceutical instructions directly in their morphology, read through the Imscribing Grammar.
 
 **What it does.** Classifies 147 medicinal plants from every inhabited continent into 11 Phytoglyphic Imscriptions (structural clusters in the 12-dimensional, 17,280,000-type lattice) and elaborates each plant's morphology into preparation and extraction parameters. Every claim is Lean-verified and Frobenius-closed.
 
@@ -24,7 +24,7 @@
 
 The *Ars Phytoglyphica* demonstrates that medicinal plants across all continents encode their pharmaceutical instructions directly in their morphology. The serration of a leaf is an opcode. Trichome density is an endpoint criterion. Fibonacci phyllotaxis is a cycle counter. The plant body is the program; the preparation (crushing, steeping, distilling) is the runtime.
 
-The project operationalizes this treatise as a Python CLI (`ap`) backed by the [Imscribing Grammar](https://github.com/USER/imsgct): a formal system whose twelve primitive dimensions and three cross-primitive axioms are machine-verified in Lean 4. Every claim is structurally verified. The Frobenius condition ($\mu \circ \delta = \text{id}$) holds across every plant, every channel, every continent.
+The project operationalizes this treatise as a Python CLI (`ars-phyto`) backed by the [Imscribing Grammar](https://github.com/USER/imsgct): a formal system whose twelve primitive dimensions and three cross-primitive axioms are machine-verified in Lean 4. Every claim is structurally verified. The Frobenius condition ($\mu \circ \delta = \text{id}$) holds across every plant, every channel, every continent.
 
 **Scale:** 147 medicinal plants from every inhabited continent, organized not by Linnaean taxonomy but by 11 canonical Phytoglyphic Imscriptions: structural clusters in a 12-dimensional lattice of 17,280,000 possible types.
 
@@ -35,11 +35,11 @@ The project operationalizes this treatise as a Python CLI (`ap`) backed by the [
 ```bash
 cd Ars_Phytoglyphica
 pip install -e .
-ap types          # List all 11 Phytoglyphic Imscriptions
-ap plant panax_ginseng   # Look up a plant and show its type
-ap morphology panax_ginseng  # Full morphological → pharmaceutical elaboration
-ap lattice        # Show the type lattice with pairwise distances
-ap distance ginseng licorice  # Structural distance between any two plants
+ars-phyto types          # List all 11 Phytoglyphic Imscriptions
+ars-phyto plant panax_ginseng   # Look up a plant and show its type
+ars-phyto morphology panax_ginseng  # Full morphological → pharmaceutical elaboration
+ars-phyto lattice        # Show the type lattice with pairwise distances
+ars-phyto distance ginseng licorice  # Structural distance between any two plants
 ```
 
 Python API:
@@ -120,19 +120,19 @@ Each discriminant primitive encodes a specific morphological feature that maps t
 ## CLI Reference
 
 ```
-ap type      <name|num>       Show a canonical structural type
-ap plant     <name>           Look up a plant and show its type
-ap types                     List all 11 Phytoglyphic Imscriptions
-ap lattice                   Show the type lattice with pairwise distances
-ap morphology <name>         Full morphological→pharmaceutical elaboration
-ap distance   <a> <b>        Structural distance between two plants/types
-ap list      [type_num]      List plants, optionally filtered by type
+ars-phyto type      <name|num>       Show a canonical structural type
+ars-phyto plant     <name>           Look up a plant and show its type
+ars-phyto types                     List all 11 Phytoglyphic Imscriptions
+ars-phyto lattice                   Show the type lattice with pairwise distances
+ars-phyto morphology <name>         Full morphological→pharmaceutical elaboration
+ars-phyto distance   <a> <b>        Structural distance between two plants/types
+ars-phyto list      [type_num]      List plants, optionally filtered by type
 ```
 
 ### Examples
 
 ```bash
-$ ap type vi
+$ ars-phyto type vi
 ══════════════════════════════════════════════════════════════════════
   TYPE VI: Adaptogen  (O₂ tier)
 ──────────────────────────────────────────────────────────────────────
@@ -148,7 +148,7 @@ $ ap type vi
     ...
 ══════════════════════════════════════════════════════════════════════
 
-$ ap distance ginseng licorice
+$ ars-phyto distance ginseng licorice
 ══════════════════════════════════════════════════════════════════════
   STRUCTURAL DISTANCE
 ──────────────────────────────────────────────────────────────────────
@@ -170,7 +170,7 @@ Ars_Phytoglyphica/
 │   ├── types.py                # 11 Phytoglyphic Imscriptions + 79-plant catalog
 │   ├── navigator.py            # Type-lattice navigator, Hamming distances
 │   ├── elaborator.py           # Morphological→pharmaceutical mapping
-│   └── cli.py                  # Unified `ap` CLI (7 subcommands)
+│   └── cli.py                  # Unified `ars-phyto` CLI (7 subcommands)
 ├── lean/                       # Lean 4 formal verification
 │   ├── Core.lean               # 12-primitive grammar (v0.5.69), crystal encoding
 │   ├── AgentSelf.lean          # Self-encoding of the ⊙ boundary operator agent

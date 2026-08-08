@@ -7,7 +7,7 @@ license = {text = "Unlicense"}
 dependencies = []
 
 [project.scripts]
-ap = "ars_phytoglyphica.cli:main"
+ars-phyto = "ars_phytoglyphica.cli:main"
 
 [build-system]
 requires = ["hatchling"]
